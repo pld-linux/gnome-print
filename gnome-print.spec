@@ -77,6 +77,8 @@ make DESTDIR=$RPM_BUILD_ROOT install
 
 strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
 
+:> %{_fonts_dir}/fontmap
+
 %find_lang %{name} --with-gnome
 
 %post
