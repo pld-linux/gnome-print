@@ -2,14 +2,16 @@ Summary:	GNOME print programs
 Summary(pl):	GNOME print - biblioteki infrastruktury drukowania w ¶rodowisku GNOME
 Name:		gnome-print
 Version:	0.22
-Release:	1
+Release:	2
 License:	LGPL
 Group:		X11/GNOME
 Group(pl):	X11/GNOME
+Group(de):	X11/GNOME
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/%{name}/%{name}-%{version}.tar.gz
 Patch0:		%{name}-gnome-font-install.patch
 Icon:		gnome-print.gif
 URL:		http://www.levien.com/gnome/print-arch.html
+BuildRequires:	automake
 # Package ghostscript-fonts-std contains required Type1 fonts
 Requires:	ghostscript-fonts-std
 BuildRequires:	libxml-devel
@@ -36,6 +38,7 @@ Summary:	GNOME print libraries, includes, etc
 Summary(pl):	GNOME print - pliki nag³ówkowe, etc
 Group:		X11/GNOME/Development/Libraries
 Group(pl):	X11/GNOME/Programowanie/Biblioteki
+Group(de):	X11/GNOME/Entwicklung/Libraries
 Requires:	%{name} = %{version}
 
 %description devel
@@ -49,6 +52,7 @@ Summary:	GNOME print static libraries
 Summary(pl):	Biblioteki statyczne GNOME print
 Group:		X11/GNOME/Development/Libraries
 Group(pl):	X11/GNOME/Programowanie/Biblioteki
+Group(de):	X11/GNOME/Entwicklung/Libraries
 Requires:	%{name}-devel = %{version}
 
 %description static
@@ -85,36 +89,9 @@ strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
 
 %post
 /sbin/ldconfig
-
-%{_bindir}/gnome-font-install --system --scan --no-copy \
-
-#      --afm-path=%{_fonts_dir}/type1 \
-#      --pfb-path=%{_fonts_dir}/type1 \
-#      --fontmap-path=%{_fonts_dir} \
-#      --pfb-assignment=ghostscript,%{_fonts_dir}/type1 \
-#      --afm-assignment=ghostscript,%{_fonts_dir}/type1 \
-#      %{_fonts_dir}
+%{_bindir}/gnome-font-install --system --scan --no-copy
 
 %postun -p /sbin/ldconfig
-
-#%triggerpost -- ghostscript-fonts-std
-#%{_bindir}/gnome-font-install --system --scan --no-copy \
-#      --afm-path=%{_fonts_dir}/type1 \
-#      --pfb-path=%{_fonts_dir}/type1 \
-#      --fontmap-path=%{_fonts_dir} \
-#      --pfb-assignment=ghostscript,%{_fonts_dir}/type1 \
-#      --afm-assignment=ghostscript,%{_fonts_dir}/type1 \
-#      %{_fonts_dir}
-
-#%triggerpostun -- ghostscript-fonts-std
-#%{_bindir}/gnome-font-install --system --scan --no-copy \
-#      --afm-path=%{_fonts_dir}/type1 \
-#      --pfb-path=%{_fonts_dir}/type1 \
-#      --fontmap-path=%{_fonts_dir} \
-#      --pfb-assignment=ghostscript,%{_fonts_dir}/type1 \
-#      --afm-assignment=ghostscript,%{_fonts_dir}/type1 \
-#      %{_fonts_dir}
-
 
 %clean
 rm -rf $RPM_BUILD_ROOT
