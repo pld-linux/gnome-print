@@ -1,11 +1,11 @@
 Summary:	GNOME print programs
 Summary(es):	Sistema de impresiСn de GNOME
-Summary(ko):	Gnome Print - ╠вЁПю╩ ю╖гя юн╪Б ╤Сюл╨Й╥╞╦╝
+Summary(ko):	GNOME Print - ╠вЁПю╩ ю╖гя юн╪Б ╤Сюл╨Й╥╞╦╝
 Summary(pl):	GNOME print - biblioteki infrastruktury drukowania w ╤rodowisku GNOME
 Summary(pt_BR):	O sistema de impressЦo do GNOME
 Summary(ru):	Библиотеки печати для GNOME
 Summary(uk):	Б╕бл╕отеки друку для GNOME
-Summary(zh_CN):	Gnome╢Рс║╧╓╬ъ
+Summary(zh_CN):	GNOME╢Рс║╧╓╬ъ
 Name:		gnome-print
 Version:	0.37
 Release:	1
@@ -77,7 +77,7 @@ Summary(pl):	GNOME print - pliki nagЁСwkowe itp
 Summary(pt_BR):	Bibliotecas e arquivos de inclusЦo do GNOME print
 Summary(ru):	Хедеры и другие файлы для разработки приложений GNOME
 Summary(uk):	Хедери та ╕нш╕ файли для розробки програм GNOME
-Summary(zh_CN):	Gnome╢Рс║╧╓╬ъ©╙╥╒©Б
+Summary(zh_CN):	GNOME╢Рс║╧╓╬ъ©╙╥╒©Б
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}
 Requires:	freetype-devel
