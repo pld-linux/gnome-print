@@ -2,7 +2,7 @@ Summary:	GNOME print programs
 Summary(pl):	GNOME print - biblioteki infrastruktury drukowania w ¶rodowisku GNOME
 Name:		gnome-print
 Version:	0.22
-Release:	2
+Release:	3
 License:	LGPL
 Group:		X11/GNOME
 Group(pl):	X11/GNOME
@@ -15,6 +15,7 @@ BuildRequires:	automake
 # Package ghostscript-fonts-std contains required Type1 fonts
 Requires:	ghostscript-fonts-std
 BuildRequires:	libxml-devel
+BuildRequires:	libunicode-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
