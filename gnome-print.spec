@@ -22,9 +22,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Basic programs and libraries that are virtually required for any GNOME
-installation. GNOME is the GNU Network Object Model Environment. That's a
-fancy name but really GNOME is a nice GUI desktop environment. It makes
-using your computer easy, powerful, and easy to configure.
+installation. GNOME is the GNU Network Object Model Environment.
+That's a fancy name but really GNOME is a nice GUI desktop
+environment. It makes using your computer easy, powerful, and easy to
+configure.
 
 %description -l pl
 GNOME print - biblioteki infrastruktury drukowania w ¶rodowisku GNOME.
@@ -132,4 +133,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/libgnomeprint
 
 %files static
-%attr(644,root,root) %{_libdir}/lib*.a
+%defattr(644,root,root,755)
+%{_libdir}/lib*.a
