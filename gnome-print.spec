@@ -2,7 +2,7 @@ Summary:	GNOME print programs
 Summary(pl):	GNOME print - biblioteki infrastruktury drukowania w ¶rodowisku GNOME
 Name:		gnome-print
 Version:	0.25
-Release:	1
+Release:	2
 License:	LGPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
@@ -15,7 +15,11 @@ URL:		http://www.levien.com/gnome/print-arch.html
 BuildRequires:	automake
 # Package ghostscript-fonts-std contains required Type1 fonts
 Requires:	ghostscript-fonts-std
+Prereq:		/sbin/ldconfig
 Prereq:		libxml
+# that's sick - gnome-font-install requires packages below...
+Prereq:		esound
+Prereq:		audiofile
 BuildRequires:	libxml-devel
 BuildRequires:	libunicode-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
