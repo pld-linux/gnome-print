@@ -67,7 +67,9 @@ gzip -9nf AUTHORS ChangeLog NEWS README
 rm -rf $RPM_BUILD_ROOT
 make DESTDIR=$RPM_BUILD_ROOT install
 
-strip $RPM_BUILD_ROOT/usr/X11R6/lib/lib*.so.*.*
+strip --strip-unneeded $RPM_BUILD_ROOT/usr/X11R6/lib/lib*.so.*.*
+
+%find_lang %{name}
 
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
@@ -75,15 +77,8 @@ strip $RPM_BUILD_ROOT/usr/X11R6/lib/lib*.so.*.*
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}
 %defattr(644,root,root,755)
-
-%lang(es) /usr/X11R6/share/locale/es/LC_MESSAGES/gnome-print.mo
-#%lang(fr) /usr/X11R6/share/locale/fr/LC_MESSAGES/gnome-print.mo
-%lang(no) /usr/X11R6/share/locale/no/LC_MESSAGES/gnome-print.mo
-%lang(pl) /usr/X11R6/share/locale/pl/LC_MESSAGES/gnome-print.mo
-%lang(ru) /usr/X11R6/share/locale/ru/LC_MESSAGES/gnome-print.mo
-
 %attr(755,root,root) /usr/X11R6/bin/*
 %attr(755,root,root) /usr/X11R6/lib/lib*.so.*.*
 /usr/X11R6/share/gnome-print
@@ -102,7 +97,6 @@ rm -rf $RPM_BUILD_ROOT
 %changelog
 Revision 1.8  1999/07/12 23:05:57  kloczek
 - added using CVS keywords in %changelog (for automating them).
-- first release in rpm package.
-* Mon Mar 29 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+- first release in rpm package.* Mon Mar 29 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.1.1-1]
 - first release in rpm package.
