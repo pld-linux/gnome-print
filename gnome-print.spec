@@ -2,7 +2,7 @@ Summary:	GNOME print programs
 Summary(pl):	GNOME print - biblioteki infrastruktury drukowania w ¶rodowisku GNOME
 Name:		gnome-print
 Version:	0.29
-Release:	1
+Release:	2
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
@@ -18,6 +18,8 @@ Patch0:		%{name}-localeh.patch
 Patch1:		%{name}-fontset.patch
 Patch2:		%{name}-gnome-font-install.patch
 Patch3:		%{name}-gettext.patch
+Patch4:		%{name}-am15.patch
+Patch5:		%{name}-options.patch
 Icon:		gnome-print.gif
 URL:		http://www.levien.com/gnome/print-arch.html
 BuildRequires:	libtool
@@ -99,6 +101,8 @@ Biblioteki statyczne z funkcjami do drukowania w GNOME.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
+%patch5 -p1
 
 %build
 rm -f missing acinclude.m4
