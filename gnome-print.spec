@@ -8,7 +8,7 @@ Summary(uk):	Б╕бл╕отеки друку для GNOME
 Summary(zh_CN):	GNOME╢Рс║╧╓╬ъ
 Name:		gnome-print
 Version:	0.37
-Release:	3
+Release:	4
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
