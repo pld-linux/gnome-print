@@ -9,7 +9,7 @@ Group(de):	X11/Libraries
 Group(pl):	X11/Biblioteki
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/%{name}/%{name}-%{version}.tar.gz
 Patch0:		%{name}-gnome-font-install.patch
-Patch1:		%{name}-no_gnome.patch
+#Patch1:		%{name}-no_gnome.patch
 Icon:		gnome-print.gif
 URL:		http://www.levien.com/gnome/print-arch.html
 BuildRequires:	automake
@@ -68,7 +68,7 @@ Biblioteki statyczne z funkcjami do drukowania w GNOME.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
+#%patch1 -p1
 
 %build
 gettextize --copy --force
