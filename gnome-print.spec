@@ -1,5 +1,7 @@
 Summary:	GNOME print programs
+Summary(es):	Sistema de impresión de GNOME
 Summary(pl):	GNOME print - biblioteki infrastruktury drukowania w ¶rodowisku GNOME
+Summary(pt_BR):	O sistema de impressão do GNOME
 Name:		gnome-print
 Version:	0.34
 Release:	4
@@ -50,12 +52,22 @@ That's a fancy name but really GNOME is a nice GUI desktop
 environment. It makes using your computer easy, powerful, and easy to
 configure.
 
+%description -l es
+gnome-print incluye las bibliotecas que se necesitan para que los
+programas GNOME puedan imprimir.
+
 %description -l pl
 GNOME print - biblioteki infrastruktury drukowania w ¶rodowisku GNOME.
 
+%description -l pt_BR
+O gnome-print inclui as bibliotecas necessárias para que programas
+GNOME possam imprimir.
+
 %package devel
 Summary:	GNOME print libraries, includes, etc
+Summary(es):	Bibliotecas y archivos de inclusión de GNOME print
 Summary(pl):	GNOME print - pliki nag³ówkowe itp.
+Summary(pt_BR):	Bibliotecas e arquivos de inclusão do GNOME print
 Group:		X11/Development/Libraries
 Group(de):	X11/Entwicklung/Libraries
 Group(es):	X11/Desarrollo/Bibliotecas
@@ -73,12 +85,22 @@ Obsoletes:	libgnomeprint15-devel
 %description devel
 Header files for GNOME print.
 
+%description -l es devel
+Este paquete contiene las bibliotecas y los archivos de encabezamiento
+que se necesitan para compilar las aplicaciones que usan GNOME print.
+
 %description -l pl devel
 Pliki nag³ówkowe itp. do GNOME print.
 
+%description -l pt_BR devel
+Esse pacote contém as bibliotecas e os arquivos de cabeçalho
+necessários para compilar aplicações que usam o gnome-print.
+
 %package static
 Summary:	GNOME print static libraries
+Summary(es):	Static libraries for gnome-print development
 Summary(pl):	Biblioteki statyczne GNOME print
+Summary(pt_BR):	Bibliotecas estáticas para desenvolvimento com o gnome-print
 Group:		X11/Development/Libraries
 Group(de):	X11/Entwicklung/Libraries
 Group(es):	X11/Desarrollo/Bibliotecas
@@ -92,8 +114,14 @@ Requires:	%{name}-devel = %{version}
 %description static
 GNOME print static libraries.
 
+%description -l es devel-static
+Static libraries for gnome-print development.
+
 %description -l pl static
 Biblioteki statyczne z funkcjami do drukowania w GNOME.
+
+%description -l pt_BR devel-static
+Bibliotecas estáticas para desenvolvimento com o gnome-print.
 
 %prep
 %setup -q
