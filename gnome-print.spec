@@ -109,7 +109,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 /sbin/ldconfig
-(cd %{_fonts_dir}; %{_bindir}/gnome-font-install --system --scan --no-copy --disable-sound)
+(cd %{_fonts_dir}; %{_bindir}/gnome-font-install --target=%{_fonts_dir})
 
 %postun -p /sbin/ldconfig
 
@@ -121,7 +121,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %ghost %{_fonts_dir}/fontmap
-%ghost %{_fonts_dir}/fontmap2
 %{_datadir}/gnome-print
 
 %files devel
