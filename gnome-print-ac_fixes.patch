@@ -1,0 +1,11 @@
+--- gnome-print-0.36/configure.in~	Sun Jun  2 20:30:15 2002
++++ gnome-print-0.36/configure.in	Sun Jun  2 20:30:15 2002
+@@ -177,7 +177,7 @@
+    AC_MSG_RESULT(nope)
+ fi
+ 
+-AM_CONDITIONAL(LIBGPA, $have_admin);
++AM_CONDITIONAL(LIBGPA, $have_admin)
+ 
+ if $have_admin; then
+   LIBGPA_CFLAGS="`xml-config --cflags`"
