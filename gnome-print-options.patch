@@ -1,0 +1,74 @@
+--- gnome-print-0.29/installer/gnome-font-install.c.options	Thu May 31 12:38:41 2001
++++ gnome-print-0.29/installer/gnome-font-install.c	Sat Jul 21 16:16:36 2001
+@@ -14,6 +14,7 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <dirent.h>
++#include <errno.h>
+ #include <string.h>
+ #include <stdio.h>
+ #include <popt-gnome.h>
+@@ -128,9 +129,10 @@
+ static GSList * goodfont_list = NULL;
+ static GHashTable * goodfont_dict = NULL;
+ 
+-int main (int argc, const char ** argv)
++int main (int argc, char ** argv)
+ {
+ 	poptContext ctx;
++        int result;
+ 	GPFontMap * map;
+ 	GSList * l;
+ 	char ** args;
+@@ -147,8 +149,15 @@
+ 	/* Parse arguments */
+ 
+ 	ctx = poptGetContext (NULL, argc, argv, options, 0);
+-	g_return_val_if_fail (ctx != NULL, 1);
+-	g_return_val_if_fail (poptGetNextOpt (ctx) == -1, 1);
++
++	result = poptGetNextOpt (ctx);
++	if (result != -1) { 
++                fprintf(stderr, "%s: %s: %s\n",
++                        "gnome-print-install",
++                        poptBadOption(ctx, POPT_BADOPTION_NOALIAS),
++                        poptStrerror(result));
++                return 1;
++	}
+ 	args = (char **) poptGetArgs (ctx);
+ 
+ 	/* Step 1: Read existing fontmap */
+@@ -236,7 +245,8 @@
+ 			gfi_write_fontmap (of);
+ 			fclose (of);
+ 		} else {
+-			g_print ("Cannot open output file %s\n", target);
++			fprintf (stderr, "gnome-font-install: Cannot open output file %s: %s\n", target, g_strerror (errno));
++			exit (1);
+ 		}
+ 	} else {
+ 		gfi_write_fontmap (stdout);
+@@ -1017,7 +1027,10 @@
+ 				if (slash) {
+ 					*slash = '\0';
+ 					slash++;
+-					path = g_hash_table_lookup (assignment_dict, metrics + 1);
++					if (assignment_dict)
++						path = g_hash_table_lookup (assignment_dict, metrics + 1);
++					else
++						path = NULL;
+ 					for (l = path; l != NULL; l = l->next) {
+ 						gchar *fn;
+ 						fn = g_concat_dir_and_file (l->data, slash);
+@@ -1066,7 +1079,10 @@
+ 				if (slash) {
+ 					*slash = '\0';
+ 					slash++;
+-					path = g_hash_table_lookup (assignment_dict, glyphs + 1);
++					if (assignment_dict)
++						path = g_hash_table_lookup (assignment_dict, glyphs + 1);
++					else
++						path = NULL;
+ 					for (l = path; l != NULL; l = l->next) {
+ 						gchar *fn;
+ 						fn = g_concat_dir_and_file (l->data, slash);
