@@ -1,14 +1,13 @@
 Summary:	GNOME core programs
 Summary(pl):	Programy podstawowe GNOME'a 
 Name:		gnome-print
-Version:	0.2
+Version:	0.4
 Release:	1
 Copyright:	LGPL
 Group:		X11/GNOME
 Group(pl):	X11/GNOME
 Source:		ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.gz
 Patch0:		gnome-print-gnome-font-install.patch
-Patch1:		gnome-print-DESTDIR.patch
 Icon:		gnome-print.gif
 URL:		http://www.levien.com/gnome/print-arch.html
 BuildRoot:	/tmp/%{name}-%{version}-root
@@ -51,13 +50,16 @@ GNOME core static libraries.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
+gettextize --copy --force
+automake
+autoconf
 CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
 ./configure %{_target_platform} \
 	--prefix=/usr/X11R6 \
 	--sysconfdir=/etc/X11/GNOME \
+	--localstatedir=/var \
 	--without-included-gettext
 make
 
@@ -77,7 +79,7 @@ strip --strip-unneeded $RPM_BUILD_ROOT/usr/X11R6/lib/lib*.so.*.*
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f %{name}
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) /usr/X11R6/bin/*
 %attr(755,root,root) /usr/X11R6/lib/lib*.so.*.*
