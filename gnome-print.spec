@@ -20,20 +20,20 @@ Patch2:		%{name}-ac_fixes.patch
 Patch3:		%{name}-am17.patch
 Icon:		gnome-print.gif
 URL:		http://www.levien.com/gnome/print-arch.html
-BuildRequires:	libtool
-BuildRequires:	automake
 BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	freetype-devel
+BuildRequires:	gdk-pixbuf-devel
 BuildRequires:	gettext-devel
-BuildRequires:	libxml-devel
 BuildRequires:	gnome-libs-devel >= 1.2.12-3
+BuildRequires:	libtool
+BuildRequires:	libxml-devel
 # Package ghostscript-fonts-std contains required Type1 fonts
+Requires(post):	/sbin/ldconfig
+# for gnome-font-install to work
+Requires(post):	gnome-libs
+Requires(post):	libxml
 Requires:	ghostscript-fonts-std
-Prereq:		/sbin/ldconfig
-Prereq:		libxml
-# that's sick - gnome-font-install requires packages below...
-Prereq:		esound
-Prereq:		audiofile
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libgnomeprint15
 
