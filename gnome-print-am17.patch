@@ -1,0 +1,9 @@
+diff -Nru gnome-print-0.37.orig/profiles/Makefile.am gnome-print-0.37/profiles/Makefile.am
+--- gnome-print-0.37.orig/profiles/Makefile.am	2002-01-22 22:08:56.000000000 +0100
++++ gnome-print-0.37/profiles/Makefile.am	2003-05-07 10:28:40.000000000 +0200
+@@ -6,4 +6,4 @@
+ 	fax-g3.profile
+ 
+ EXTRA_DIST = 			\
+-	$(profiles_DATA)	\
++	$(profiles_DATA)
