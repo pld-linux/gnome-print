@@ -1,12 +1,33 @@
-diff -Nru gnome-print-0.1.1/Makefile.in gnome-print-0.1.1.new/Makefile.in
---- gnome-print-0.1.1/Makefile.in	Fri Feb 26 17:02:21 1999
-+++ gnome-print-0.1.1.new/Makefile.in	Sun Mar 14 11:49:31 1999
-@@ -708,7 +708,7 @@
+diff -ur gnome-print-0.4.orig/Makefile.am gnome-print-0.4/Makefile.am
+--- gnome-print-0.4.orig/Makefile.am	Fri Jul  9 07:44:06 1999
++++ gnome-print-0.4/Makefile.am	Sat Jul 17 18:21:18 1999
+@@ -78,16 +78,16 @@
+ 	$(GNOME_XML_LIB)
  
  install-data-local: gnome-font-install
- 	chmod a+x gnome-font-install
--	./gnome-font-install --system --scan --no-copy
-+#	./gnome-font-install --system --scan --no-copy
- 
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
+-	./gnome-font-install --system --scan --no-copy 			\
+-		--afm-path=$(datadir)/fonts/afms 			\
+-		--pfb-path=$(datadir)/fonts/pfbs 			\
+-		$(GHOSTSCRIPT_ASSIGN)					\
+-		--pfb-assignment=ghostscript,/usr/share/ghostscript/fonts \
+-		--pfb-assignment=ghostscript,/usr/lib/ghostscript/fonts   \
+-		--pfb-assignment=ghostscript,/usr/share/fonts/default/Type1 \
+-		--pfb-assignment=ghostscript,/usr/share/fonts/default/ghostscript \
+-		--afm-assignment=ghostscript,/usr/share/ghostscript/fonts \
+-		--afm-assignment=ghostscript,/usr/lib/ghostscript/fonts   \
+-		--afm-assignment=ghostscript,/usr/share/fonts/default/Type1 \
+-		--afm-assignment=ghostscript,/usr/share/fonts/default/ghostscript \
+-		$(srcdir)/fonts/
++#	./gnome-font-install --system --scan --no-copy 			\
++#		--afm-path=$(datadir)/fonts/afms 			\
++#		--pfb-path=$(datadir)/fonts/pfbs 			\
++#		$(GHOSTSCRIPT_ASSIGN)					\
++#		--pfb-assignment=ghostscript,/usr/share/ghostscript/fonts \
++#		--pfb-assignment=ghostscript,/usr/lib/ghostscript/fonts   \
++#		--pfb-assignment=ghostscript,/usr/share/fonts/default/Type1 \
++#		--pfb-assignment=ghostscript,/usr/share/fonts/default/ghostscript \
++#		--afm-assignment=ghostscript,/usr/share/ghostscript/fonts \
++#		--afm-assignment=ghostscript,/usr/lib/ghostscript/fonts   \
++#		--afm-assignment=ghostscript,/usr/share/fonts/default/Type1 \
++#		--afm-assignment=ghostscript,/usr/share/fonts/default/ghostscript \
++#		$(srcdir)/fonts/
