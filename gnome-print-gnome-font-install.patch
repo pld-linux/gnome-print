@@ -1,0 +1,12 @@
+diff -Nru gnome-print-0.1.1/Makefile.in gnome-print-0.1.1.new/Makefile.in
+--- gnome-print-0.1.1/Makefile.in	Fri Feb 26 17:02:21 1999
++++ gnome-print-0.1.1.new/Makefile.in	Sun Mar 14 11:49:31 1999
+@@ -708,7 +708,7 @@
+ 
+ install-data-local: gnome-font-install
+ 	chmod a+x gnome-font-install
+-	./gnome-font-install --system --scan --no-copy
++#	./gnome-font-install --system --scan --no-copy
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
