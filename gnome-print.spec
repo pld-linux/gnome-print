@@ -13,6 +13,7 @@ Patch0:		%{name}-gnome-font-install.patch
 Patch1:		%{name}-hardcode_fontmap_path.patch
 Patch2:		%{name}-localeh.patch
 Patch3:		%{name}-fontset.patch
+Patch4:		%{name}-macros.patch
 Icon:		gnome-print.gif
 URL:		http://www.levien.com/gnome/print-arch.html
 BuildRequires:	automake
@@ -81,10 +82,11 @@ Biblioteki statyczne z funkcjami do drukowania w GNOME.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
 
 %build
 gettextize --copy --force
-aclocal
+aclocal -I macros
 autoconf
 automake -a -c
 %configure  \
