@@ -8,13 +8,6 @@ Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
-Group(de):	X11/Libraries
-Group(es):	X11/Bibliotecas
-Group(fr):	X11/Librairies
-Group(pl):	X11/Biblioteki
-Group(pt_BR):	X11/Bibliotecas
-Group(ru):	X11/Библиотеки
-Group(uk):	X11/Б╕бл╕отеки
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/%{name}/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-localeh.patch
 Patch1:		%{name}-gnome-font-install.patch
@@ -69,13 +62,6 @@ Summary(es):	Bibliotecas y archivos de inclusiСn de GNOME print
 Summary(pl):	GNOME print - pliki nagЁСwkowe itp.
 Summary(pt_BR):	Bibliotecas e arquivos de inclusЦo do GNOME print
 Group:		X11/Development/Libraries
-Group(de):	X11/Entwicklung/Libraries
-Group(es):	X11/Desarrollo/Bibliotecas
-Group(fr):	X11/Development/Librairies
-Group(pl):	X11/Programowanie/Biblioteki
-Group(pt_BR):	X11/Desenvolvimento/Bibliotecas
-Group(ru):	X11/Разработка/Библиотеки
-Group(uk):	X11/Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 Requires:	libunicode-devel
 Requires:	gdk-pixbuf-devel
@@ -102,13 +88,6 @@ Summary(es):	Static libraries for gnome-print development
 Summary(pl):	Biblioteki statyczne GNOME print
 Summary(pt_BR):	Bibliotecas estАticas para desenvolvimento com o gnome-print
 Group:		X11/Development/Libraries
-Group(de):	X11/Entwicklung/Libraries
-Group(es):	X11/Desarrollo/Bibliotecas
-Group(fr):	X11/Development/Librairies
-Group(pl):	X11/Programowanie/Biblioteki
-Group(pt_BR):	X11/Desenvolvimento/Bibliotecas
-Group(ru):	X11/Разработка/Библиотеки
-Group(uk):	X11/Розробка/Б╕бл╕отеки
 Requires:	%{name}-devel = %{version}
 
 %description static
