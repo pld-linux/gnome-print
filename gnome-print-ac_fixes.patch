@@ -1,5 +1,5 @@
---- gnome-print-0.36/configure.in~	Sun Jun  2 20:30:15 2002
-+++ gnome-print-0.36/configure.in	Sun Jun  2 20:30:15 2002
+--- gnome-print-0.37/configure.in~	Mon Sep 16 23:26:57 2002
++++ gnome-print-0.37/configure.in	Mon Sep 16 23:26:57 2002
 @@ -177,7 +177,7 @@
     AC_MSG_RESULT(nope)
  fi
@@ -9,3 +9,23 @@
  
  if $have_admin; then
    LIBGPA_CFLAGS="`xml-config --cflags`"
+@@ -280,11 +280,6 @@
+ 
+ 
+ AC_PATH_PROGS(PERL, perl5 perl)
+-AC_SUBST(PERL)
+-
+-AC_SUBST(CFLAGS)
+-AC_SUBST(CPPFLAGS)
+-AC_SUBST(LDFLAGS)
+ 
+ AC_OUTPUT([
+ Makefile
+@@ -300,7 +295,6 @@
+ intl/Makefile
+ afms/Makefile
+ afms/adobe/Makefile
+-fonts/Makefile
+ tests/Makefile
+ installer/Makefile],
+ [sed -e "/POTFILES =/r po/POTFILES" po/Makefile.in > po/Makefile])
