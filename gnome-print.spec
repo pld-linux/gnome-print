@@ -1,7 +1,7 @@
 Summary:	GNOME print programs
-Summary(pl):	Programy podstawowe GNOME'a 
+Summary(pl):	GNOME print - biblioteki infrastruktury drukowania w ¶rodowisku GNOME
 Name:		gnome-print
-Version:	0.12
+Version:	0.14
 Release:	1
 License:	LGPL
 Group:		X11/GNOME
@@ -23,8 +23,7 @@ fancy name but really GNOME is a nice GUI desktop environment. It makes
 using your computer easy, powerful, and easy to configure.
 
 %description -l pl
-Podstawowe programy i biblioteki, które s± niezbêdne przy ka¿dej instlacji
-GNOME.
+GNOME print - biblioteki infrastruktury drukowania w ¶rodowisku GNOME.
 
 %package devel
 Summary:	GNOME print libraries, includes, etc
@@ -34,10 +33,10 @@ Group(pl):	X11/GNOME/Programowanie/Biblioteki
 Requires:	%{name} = %{version}
 
 %description devel
-Header files for gnome-libs.
+Header files for GNOME print.
 
 %description -l pl devel
-Pliki nag³ówkowe etc do GNOME core.
+Pliki nag³ówkowe etc do GNOME print.
 
 %package static
 Summary:	GNOME print static libraries
