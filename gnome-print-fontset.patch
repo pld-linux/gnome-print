@@ -1,0 +1,29 @@
+diff -ruN gnome-print-0.25.orig/libgnomeprint/gnome-rfont.c gnome-print-0.25/libgnomeprint/gnome-rfont.c
+--- gnome-print-0.25.orig/libgnomeprint/gnome-rfont.c	Mon Nov 13 19:36:32 2000
++++ gnome-print-0.25/libgnomeprint/gnome-rfont.c	Sun Feb  4 04:44:30 2001
+@@ -1156,7 +1156,7 @@
+ 	if (!gdkfont) {
+ 		/* No useful font found, so load 'fixed' */
+ 		
+-		gdkfont = gdk_font_load ("fixed");
++		gdkfont = gdk_fontset_load ("-*-fixed-medium-r-normal--14-*-*-*-*-*-*-*,*-r-*");
+ 		gdkname = g_strdup ("fixed");
+ 	}
+ 
+@@ -1242,14 +1242,14 @@
+ #ifdef VERBOSE
+ 		g_print ("Trying: %s\n", xname);
+ #endif
+-		f = gdk_font_load (xname);
++		f = gdk_fontset_load (xname);
+ 		if (!f) {
+ 			g_snprintf (xname, 1024, "-*-%s-%s-%s-%s-*-%d-*-*-*-*-*-%s",
+ 				    c[2], c[3], c[4], c[5], pxsize, c[13]);
+ #ifdef VERBOSE
+ 			g_print ("Trying: %s\n", xname);
+ #endif
+-			f = gdk_font_load (xname);
++			f = gdk_fontset_load (xname);
+ 		}
+ 
+ 		if (f) {
