@@ -1,7 +1,7 @@
 Summary:	GNOME print programs
 Summary(pl):	GNOME print - biblioteki infrastruktury drukowania w ¶rodowisku GNOME
 Name:		gnome-print
-Version:	0.16
+Version:	0.18
 Release:	1
 License:	LGPL
 Group:		X11/GNOME
@@ -12,7 +12,7 @@ Patch0:		gnome-print-gnome-font-install.patch
 Icon:		gnome-print.gif
 URL:		http://www.levien.com/gnome/print-arch.html
 # Package ghostscript-fonts-std contains required Type1 fonts
-Requires:       ghostscript-fonts-std
+Requires:	ghostscript-fonts-std
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -22,7 +22,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Basic programs and libraries that are virtually required for any GNOME
-installation.  GNOME is the GNU Network Object Model Environment. That's a
+installation. GNOME is the GNU Network Object Model Environment. That's a
 fancy name but really GNOME is a nice GUI desktop environment. It makes
 using your computer easy, powerful, and easy to configure.
 
@@ -77,7 +77,7 @@ make DESTDIR=$RPM_BUILD_ROOT install
 install -d	       $RPM_BUILD_ROOT%{_fonts_dir}
 install fonts/*.font   $RPM_BUILD_ROOT%{_fonts_dir}
 install %{SOURCE1}     $RPM_BUILD_ROOT%{_fonts_dir}
-strip --strip-unneeded $RPM_BUILD_ROOT%{_prefix}/lib/lib*.so.*.*
+strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
 
 %find_lang %{name} --with-gnome
 
