@@ -137,7 +137,7 @@ rm -rf $RPM_BUILD_ROOT
 /sbin/ldconfig
 echo "Generating %{_datadir}/fonts/fontmap2 file"
 %{_bindir}/gnome-font-install \
-	--aliases=%{_org_datadir}/gnome-print/fonts/adobe-urw.font \
+	--aliases=%{_org_datadir}/gnome/fonts/adobe-urw.font \
 	--target=%{_datadir}/fonts/fontmap2 \
 	--recursive \
 	--clean \
