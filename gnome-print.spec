@@ -1,5 +1,6 @@
 Summary:	GNOME print programs
 Summary(es):	Sistema de impresiСn de GNOME
+Summary(ko):	Gnome Print - ╠вЁПю╩ ю╖гя юн╪Б ╤Сюл╨Й╥╞╦╝
 Summary(pl):	GNOME print - biblioteki infrastruktury drukowania w ╤rodowisku GNOME
 Summary(pt_BR):	O sistema de impressЦo do GNOME
 Summary(ru):	Библиотеки печати для GNOME
@@ -70,6 +71,7 @@ GNOME possam imprimir.
 %package devel
 Summary:	GNOME print libraries, includes, etc
 Summary(es):	Bibliotecas y archivos de inclusiСn de GNOME print
+Summary(ko):	GNOME print╦╕ ╩Г©Кго╢б юю©Кга╥н╠в╥╔ю╩ ╟Ё╧ъго╠Б ю╖гя ╤Сюл╨Й╥╞╦╝©м гЛ╢Уфдюо
 Summary(pl):	GNOME print - pliki nagЁСwkowe itp.
 Summary(pt_BR):	Bibliotecas e arquivos de inclusЦo do GNOME print
 Summary(ru):	Хедеры и другие файлы для разработки приложений GNOME
