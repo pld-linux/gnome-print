@@ -1,13 +1,16 @@
-diff -ur gnome-print-0.4.orig/Makefile.am gnome-print-0.4/Makefile.am
---- gnome-print-0.4.orig/Makefile.am	Fri Jul  9 07:44:06 1999
-+++ gnome-print-0.4/Makefile.am	Sat Jul 17 18:21:18 1999
-@@ -78,16 +78,16 @@
- 	$(GNOME_XML_LIB)
- 
- install-data-local: gnome-font-install
+diff -Nru gnome-print-0.10/Makefile.am gnome-print-0.10.new/Makefile.am
+--- gnome-print-0.10/Makefile.am	Mon Oct 18 22:51:32 1999
++++ gnome-print-0.10.new/Makefile.am	Sun Feb 20 06:37:22 2000
+@@ -90,19 +90,3 @@
+ 	$(GNOME_LIBS)		\
+ 	$(GNOME_XML_LIB)	\
+ 	$(INTLLIBS)
+-
+-install-data-local: gnome-font-install
 -	./gnome-font-install --system --scan --no-copy 			\
 -		--afm-path=$(datadir)/fonts/afms 			\
 -		--pfb-path=$(datadir)/fonts/pfbs 			\
+-		--fontmap-path=$(datadir)/fonts				\
 -		$(GHOSTSCRIPT_ASSIGN)					\
 -		--pfb-assignment=ghostscript,/usr/share/ghostscript/fonts \
 -		--pfb-assignment=ghostscript,/usr/lib/ghostscript/fonts   \
@@ -18,16 +21,3 @@ diff -ur gnome-print-0.4.orig/Makefile.am gnome-print-0.4/Makefile.am
 -		--afm-assignment=ghostscript,/usr/share/fonts/default/Type1 \
 -		--afm-assignment=ghostscript,/usr/share/fonts/default/ghostscript \
 -		$(srcdir)/fonts/
-+#	./gnome-font-install --system --scan --no-copy 			\
-+#		--afm-path=$(datadir)/fonts/afms 			\
-+#		--pfb-path=$(datadir)/fonts/pfbs 			\
-+#		$(GHOSTSCRIPT_ASSIGN)					\
-+#		--pfb-assignment=ghostscript,/usr/share/ghostscript/fonts \
-+#		--pfb-assignment=ghostscript,/usr/lib/ghostscript/fonts   \
-+#		--pfb-assignment=ghostscript,/usr/share/fonts/default/Type1 \
-+#		--pfb-assignment=ghostscript,/usr/share/fonts/default/ghostscript \
-+#		--afm-assignment=ghostscript,/usr/share/ghostscript/fonts \
-+#		--afm-assignment=ghostscript,/usr/lib/ghostscript/fonts   \
-+#		--afm-assignment=ghostscript,/usr/share/fonts/default/Type1 \
-+#		--afm-assignment=ghostscript,/usr/share/fonts/default/ghostscript \
-+#		$(srcdir)/fonts/
