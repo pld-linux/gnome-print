@@ -2,7 +2,7 @@ Summary:	GNOME print programs
 Summary(pl):	GNOME print - biblioteki infrastruktury drukowania w ¶rodowisku GNOME
 Name:		gnome-print
 Version:	0.24
-Release:	1
+Release:	2
 License:	LGPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
