@@ -55,6 +55,7 @@ Group(de):	X11/Entwicklung/Libraries
 Group(pl):	X11/Programowanie/Biblioteki
 Requires:	%{name} = %{version}
 Requires:	libunicode-devel
+Requires:	gdk-pixbuf-devel
 
 %description devel
 Header files for GNOME print.
@@ -69,7 +70,6 @@ Group:		X11/Development/Libraries
 Group(de):	X11/Entwicklung/Libraries
 Group(pl):	X11/Programowanie/Biblioteki
 Requires:	%{name}-devel = %{version}
-Requires:	gdk-pixbuf-devel
 
 %description static
 GNOME print static libraries.
