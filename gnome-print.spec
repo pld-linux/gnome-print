@@ -146,7 +146,7 @@ Bibliotecas estáticas para desenvolvimento com o gnome-print.
 rm -f missing acinclude.m4
 sed -e s/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
 mv -f configure.in.tmp configure.in
-libtoolize --copy --force
+%{__libtoolize}
 gettextize --copy --force
 aclocal -I %{_aclocaldir}/gnome
 %{__autoconf}
