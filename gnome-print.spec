@@ -7,7 +7,12 @@ Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
+Group(es):	X11/Bibliotecas
+Group(fr):	X11/Librairies
 Group(pl):	X11/Biblioteki
+Group(pt_BR):	X11/Bibliotecas
+Group(ru):	X11/Библиотеки
+Group(uk):	X11/Б╕бл╕отеки
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/%{name}/%{name}-%{version}.tar.gz
 Patch0:		%{name}-localeh.patch
 Patch1:		%{name}-fontset.patch
@@ -18,6 +23,7 @@ URL:		http://www.levien.com/gnome/print-arch.html
 BuildRequires:	libtool
 BuildRequires:	automake
 BuildRequires:	autoconf
+BuildRequires:	gettext-devel
 BuildRequires:	libxml-devel
 BuildRequires:	libunicode-devel
 BuildRequires:	gnome-libs-devel >= 1.2.12-3
@@ -49,10 +55,15 @@ GNOME print - biblioteki infrastruktury drukowania w ╤rodowisku GNOME.
 
 %package devel
 Summary:	GNOME print libraries, includes, etc
-Summary(pl):	GNOME print - pliki nagЁСwkowe, etc
+Summary(pl):	GNOME print - pliki nagЁСwkowe itp.
 Group:		X11/Development/Libraries
 Group(de):	X11/Entwicklung/Libraries
+Group(es):	X11/Desarrollo/Bibliotecas
+Group(fr):	X11/Development/Librairies
 Group(pl):	X11/Programowanie/Biblioteki
+Group(pt_BR):	X11/Desenvolvimento/Bibliotecas
+Group(ru):	X11/Разработка/Библиотеки
+Group(uk):	X11/Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 Requires:	libunicode-devel
 Requires:	gdk-pixbuf-devel
@@ -61,14 +72,19 @@ Requires:	gdk-pixbuf-devel
 Header files for GNOME print.
 
 %description -l pl devel
-Pliki nagЁСwkowe etc do GNOME print.
+Pliki nagЁСwkowe itp. do GNOME print.
 
 %package static
 Summary:	GNOME print static libraries
 Summary(pl):	Biblioteki statyczne GNOME print
 Group:		X11/Development/Libraries
 Group(de):	X11/Entwicklung/Libraries
+Group(es):	X11/Desarrollo/Bibliotecas
+Group(fr):	X11/Development/Librairies
 Group(pl):	X11/Programowanie/Biblioteki
+Group(pt_BR):	X11/Desenvolvimento/Bibliotecas
+Group(ru):	X11/Разработка/Библиотеки
+Group(uk):	X11/Розробка/Б╕бл╕отеки
 Requires:	%{name}-devel = %{version}
 
 %description static
@@ -85,7 +101,7 @@ Biblioteki statyczne z funkcjami do drukowania w GNOME.
 %patch3 -p1
 
 %build
-rm missing acinclude.m4
+rm -f missing acinclude.m4
 libtoolize --copy --force
 gettextize --copy --force
 aclocal -I %{_aclocaldir}/gnome
@@ -107,14 +123,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %find_lang %{name} --with-gnome
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %post
 /sbin/ldconfig
 (cd %{_fonts_dir}; %{_bindir}/gnome-font-install --target=%{_fonts_dir}/fontmap)
 
 %postun -p /sbin/ldconfig
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
