@@ -2,7 +2,7 @@ Summary:	GNOME print programs
 Summary(pl):	GNOME print - biblioteki infrastruktury drukowania w ¶rodowisku GNOME
 Name:		gnome-print
 Version:	0.20
-Release:	1
+Release:	2
 License:	LGPL
 Group:		X11/GNOME
 Group(pl):	X11/GNOME
@@ -95,7 +95,7 @@ strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
 
 %postun -p /sbin/ldconfig
 
-%triggetpost -- ghostscript-fonts-std
+%triggerpost -- ghostscript-fonts-std
 %{_bindir}/gnome-font-install --system --scan --no-copy \
       --afm-path=%{_fonts_dir}/type1 \
       --pfb-path=%{_fonts_dir}/type1 \
@@ -104,7 +104,7 @@ strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
       --afm-assignment=ghostscript,%{_fonts_dir}/type1 \
       %{_fonts_dir}
 
-%triggetpostun -- ghostscript-fonts-std
+%triggerpostun -- ghostscript-fonts-std
 %{_bindir}/gnome-font-install --system --scan --no-copy \
       --afm-path=%{_fonts_dir}/type1 \
       --pfb-path=%{_fonts_dir}/type1 \
