@@ -149,8 +149,8 @@ mv -f configure.in.tmp configure.in
 libtoolize --copy --force
 gettextize --copy --force
 aclocal -I %{_aclocaldir}/gnome
-autoconf
-automake -a -c -f
+%{__autoconf}
+%{__automake}
 %configure  \
 	--without-included-gettext
 %{__make}
