@@ -8,7 +8,7 @@ Summary(uk):	‚¶¬Ã¶œ‘≈À… ƒ“’À’ ƒÃ— GNOME
 Summary(zh_CN):	GNOME¥Ú”°π§æﬂ
 Name:		gnome-print
 Version:	0.37
-Release:	4
+Release:	5
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
@@ -19,6 +19,7 @@ Patch1:		%{name}-am15.patch
 Patch2:		%{name}-ac_fixes.patch
 Patch3:		%{name}-am17.patch
 Patch4:		%{name}-ft2build_h.patch
+Patch5:		%{name}-locale_names.patch
 Icon:		gnome-print.gif
 URL:		http://www.levien.com/gnome/print-arch.html
 BuildRequires:	autoconf
@@ -141,6 +142,9 @@ Bibliotecas est·ticas para desenvolvimento com o gnome-print.
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
+%patch5 -p1
+
+mv -f po/{no,nb}.po
 
 %build
 rm -f missing acinclude.m4
