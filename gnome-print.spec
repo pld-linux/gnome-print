@@ -2,7 +2,7 @@ Summary:	GNOME print programs
 Summary(pl):	GNOME print - biblioteki infrastruktury drukowania w ¶rodowisku GNOME
 Name:		gnome-print
 Version:	0.34
-Release:	2
+Release:	3
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
@@ -38,6 +38,7 @@ Obsoletes:	libgnomeprint15
 
 %define		_prefix		/usr/X11R6
 %define         _fonts_dir      /usr/share/fonts
+%define		_org_datadir	%{_prefix}/share
 %define		_datadir	/usr/share
 %define		_sysconfdir	/etc/X11/GNOME
 %define		_localstatedir	/var
@@ -118,7 +119,10 @@ gzip -9nf AUTHORS ChangeLog NEWS README
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} DESTDIR=$RPM_BUILD_ROOT install
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	aliasdir=$RPM_BUILD_ROOT%{_org_datadir}/gnome/fonts \
+	mapdir=$RPM_BUILD_ROOT%{_org_datadir}/gnome/fonts
 
 :> $RPM_BUILD_ROOT%{_fonts_dir}/fontmap2
 
@@ -129,8 +133,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 /sbin/ldconfig
-echo "Generate /usr/share/fonts/fontmap2 file"
-%{_bindir}/gnome-font-install -r -c -t /usr/share/fonts/fontmap2 /usr/share/fonts/
+echo "Generating /usr/share/fonts/fontmap2 file"
+%{_bindir}/gnome-font-install \
+	--aliases=%{_datadir}/gnome-print/fonts/adobe-urw.font \
+	--target=/usr/share/fonts/fontmap2 \
+	--recursive \
+	--clean \
+	/usr/share/fonts/Type1 \
+	/usr/share/fonts/TTF
 
 %postun -p /sbin/ldconfig
 
@@ -140,6 +150,7 @@ echo "Generate /usr/share/fonts/fontmap2 file"
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %ghost %{_fonts_dir}/fontmap2
 %{_datadir}/gnome-print
+%{_datadir}/gnome/fonts
 
 %files devel
 %defattr(644,root,root,755)
