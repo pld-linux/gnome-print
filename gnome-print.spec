@@ -72,7 +72,7 @@ GNOME possam imprimir.
 Summary:	GNOME print libraries, includes, etc
 Summary(es):	Bibliotecas y archivos de inclusiСn de GNOME print
 Summary(ko):	GNOME print╦╕ ╩Г©Кго╢б юю©Кга╥н╠в╥╔ю╩ ╟Ё╧ъго╠Б ю╖гя ╤Сюл╨Й╥╞╦╝©м гЛ╢Уфдюо
-Summary(pl):	GNOME print - pliki nagЁСwkowe itp.
+Summary(pl):	GNOME print - pliki nagЁСwkowe itp
 Summary(pt_BR):	Bibliotecas e arquivos de inclusЦo do GNOME print
 Summary(ru):	Хедеры и другие файлы для разработки приложений GNOME
 Summary(uk):	Хедери та ╕нш╕ файли для розробки програм GNOME
