@@ -5,6 +5,7 @@ Version:	0.1.1
 Release:	1
 Copyright:	LGPL
 Group:		X11/Libraries
+Group(pl):	X11/Biblioteki
 Source:		ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.gz
 Patch0:		gnome-print-gnome-font-install.patch
 Patch1:		gnome-print-DESTDIR.patch
@@ -25,10 +26,11 @@ Podstawowe programy i biblioteki, które s± niezbêdne przy ka¿dej instlacji
 GNOME.
 
 %package devel
-Summary:     GNOME core libraries, includes, etc
-Summary(pl): GNOME core - pliki nag³ówkowe, etc
-Group:       X11/Libraries
-Requires:    %{name} = %{version}
+Summary:     	GNOME core libraries, includes, etc
+Summary(pl): 	GNOME core - pliki nag³ówkowe, etc
+Group:       	X11/Development/Libraries
+Group(pl):	X11/Programowanie/Biblioteki
+Requires:    	%{name} = %{version}
 
 %description devel
 Header files for gnome-libs.
@@ -37,10 +39,11 @@ Header files for gnome-libs.
 Pliki nag³ówkowe etc do GNOME core.
 
 %package static
-Summary:     GNOME core static libraries
-Summary(pl): Biblioteki statyczne GNOME core
-Group:       X11/gnome
-Requires:    %{name}-devel = %{version}
+Summary:     	GNOME core static libraries
+Summary(pl): 	Biblioteki statyczne GNOME core
+Group:       	X11/Development/Libraries
+Group(pl):	X11/Programowanie/Biblioteki
+Requires:    	%{name}-devel = %{version}
 
 %description static
 GNOME core static libraries.
@@ -75,15 +78,15 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 
-%attr(755,root,root) /usr/X11R6/bin/*
-%attr(755,root,root) /usr/X11R6/lib/lib*.so.*.*
-/usr/X11R6/share/gnome-print
-
 %lang(es) /usr/X11R6/share/locale/es/LC_MESSAGES/gnome-print.mo
 #%lang(fr) /usr/X11R6/share/locale/fr/LC_MESSAGES/gnome-print.mo
 %lang(no) /usr/X11R6/share/locale/no/LC_MESSAGES/gnome-print.mo
 %lang(pl) /usr/X11R6/share/locale/pl/LC_MESSAGES/gnome-print.mo
 %lang(ru) /usr/X11R6/share/locale/ru/LC_MESSAGES/gnome-print.mo
+
+%attr(755,root,root) /usr/X11R6/bin/*
+%attr(755,root,root) /usr/X11R6/lib/lib*.so.*.*
+/usr/X11R6/share/gnome-print
 
 %files devel
 %defattr(644,root,root,755)
@@ -93,11 +96,13 @@ rm -rf $RPM_BUILD_ROOT
 /usr/X11R6/include/libgnomeprint
 
 %files static
-%attr(644,root,root) /usr/X11R6/lib/lib*.a
+%defattr(644,root,root,755)
+/usr/X11R6/lib/lib*.a
 
 %changelog
 Revision 1.8  1999/07/12 23:05:57  kloczek
 - added using CVS keywords in %changelog (for automating them).
-- first release in rpm package.* Mon Mar 29 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+- first release in rpm package.
+* Mon Mar 29 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.1.1-1]
 - first release in rpm package.
