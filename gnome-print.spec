@@ -67,7 +67,7 @@ autoconf
 LDFLAGS="-s"; export LDFLAGS
 %configure  \
 	--without-included-gettext
-make
+%{__make}
 
 gzip -9nf AUTHORS ChangeLog NEWS README
 
