@@ -11,7 +11,7 @@ Source1:	ghostscript-fonts-std.font
 Patch0:		gnome-print-gnome-font-install.patch
 Icon:		gnome-print.gif
 URL:		http://www.levien.com/gnome/print-arch.html
-# Package urw-fonts contains required Type1 fonts
+# Package ghostscript-fonts-std contains required Type1 fonts
 Requires:       ghostscript-fonts-std
 BuildRoot:	/tmp/%{name}-%{version}-root
 
@@ -74,6 +74,7 @@ gzip -9nf AUTHORS ChangeLog NEWS README
 rm -rf $RPM_BUILD_ROOT
 
 make DESTDIR=$RPM_BUILD_ROOT install
+install -d	       $RPM_BUILD_ROOT%{_fonts_dir}
 install fonts/*.font   $RPM_BUILD_ROOT%{_fonts_dir}
 install %{SOURCE1}     $RPM_BUILD_ROOT%{_fonts_dir}
 strip --strip-unneeded $RPM_BUILD_ROOT%{_prefix}/lib/lib*.so.*.*
