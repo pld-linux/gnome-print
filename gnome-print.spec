@@ -16,6 +16,7 @@ Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{version}/%{name}-%{vers
 Patch0:		%{name}-gnome-font-install.patch
 Patch1:		%{name}-am15.patch
 Patch2:		%{name}-ac_fixes.patch
+Patch3:		%{name}-am17.patch
 Icon:		gnome-print.gif
 URL:		http://www.levien.com/gnome/print-arch.html
 BuildRequires:	libtool
@@ -140,6 +141,7 @@ Bibliotecas estáticas para desenvolvimento com o gnome-print.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 rm -f missing acinclude.m4
