@@ -7,7 +7,7 @@ Summary(uk):	Б╕бл╕отеки друку для GNOME
 Summary(zh_CN):	Gnome╢Рс║╧╓╬ъ
 Name:		gnome-print
 Version:	0.36
-Release:	1
+Release:	2
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
@@ -23,7 +23,6 @@ BuildRequires:	autoconf
 BuildRequires:	freetype-devel
 BuildRequires:	gettext-devel
 BuildRequires:	libxml-devel
-BuildRequires:	libunicode-devel
 BuildRequires:	gnome-libs-devel >= 1.2.12-3
 # Package ghostscript-fonts-std contains required Type1 fonts
 Requires:	ghostscript-fonts-std
@@ -78,7 +77,6 @@ Summary(uk):	Хедери та ╕нш╕ файли для розробки програм GNOME
 Summary(zh_CN):	Gnome╢Рс║╧╓╬ъ©╙╥╒©Б
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
-Requires:	libunicode-devel
 Requires:	freetype-devel
 Requires:	gdk-pixbuf-devel
 Requires:	gnome-libs-devel
@@ -155,8 +153,6 @@ aclocal -I %{_aclocaldir}/gnome
 	--without-included-gettext
 %{__make}
 
-gzip -9nf AUTHORS ChangeLog NEWS README
-
 %install
 rm -rf $RPM_BUILD_ROOT
 
@@ -189,6 +185,7 @@ echo "Generating %{_datadir}/fonts/fontmap2 file"
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
+%doc AUTHORS NEWS README
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %ghost %{_fonts_dir}/fontmap2
@@ -197,7 +194,7 @@ echo "Generating %{_datadir}/fonts/fontmap2 file"
 
 %files devel
 %defattr(644,root,root,755)
-%doc *.gz
+%doc ChangeLog
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
 %attr(755,root,root) %{_libdir}/*.sh
