@@ -12,6 +12,7 @@ Icon:		gnome-print.gif
 URL:		http://www.levien.com/gnome/print-arch.html
 # Package ghostscript-fonts-std contains required Type1 fonts
 Requires:	ghostscript-fonts-std
+BuildRequires:	libxml-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
