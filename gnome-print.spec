@@ -198,7 +198,7 @@ echo "Generating %{_datadir}/fonts/fontmap2 file"
 %defattr(644,root,root,755)
 %doc ChangeLog
 %attr(755,root,root) %{_libdir}/lib*.so
-%attr(755,root,root) %{_libdir}/lib*.la
+%{_libdir}/lib*.la
 %attr(755,root,root) %{_libdir}/*.sh
 %{_includedir}/gnome-1.0/libgnomeprint
 
