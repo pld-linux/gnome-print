@@ -8,7 +8,7 @@ Summary(uk):	â¦ÂÌ¦ÏÔÅËÉ ÄÒÕËÕ ÄÌÑ GNOME
 Summary(zh_CN):	GNOME´òÓ¡¹¤¾ß
 Name:		gnome-print
 Version:	0.37
-Release:	2
+Release:	3
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
@@ -28,20 +28,16 @@ BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel >= 1.2.12-3
 BuildRequires:	libtool
 BuildRequires:	libxml-devel
-# Package ghostscript-fonts-std contains required Type1 fonts
 Requires(post):	/sbin/ldconfig
 # for gnome-font-install to work
 Requires(post):	gnome-libs
 Requires(post):	libxml
+# Package ghostscript-fonts-std contains required Type1 fonts
 Requires:	ghostscript-fonts-std
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libgnomeprint15
 
-%define         _fonts_dir      /usr/share/fonts
-%define		_org_datadir	%{_prefix}/share
-%define		_datadir	/usr/share
 %define		_sysconfdir	/etc/X11/GNOME
-%define		_localstatedir	/var
 
 %description
 Basic programs and libraries that are virtually required for any GNOME
@@ -162,12 +158,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	aliasdir=%{_org_datadir}/gnome/fonts \
-	mapdir=%{_org_datadir}/gnome/fonts
+	aliasdir=%{_datadir}/gnome/fonts \
+	mapdir=%{_datadir}/gnome/fonts
 
-install fonts/*.font $RPM_BUILD_ROOT%{_org_datadir}/gnome/fonts
+install fonts/*.font $RPM_BUILD_ROOT%{_datadir}/gnome/fonts
 
-:> $RPM_BUILD_ROOT%{_fonts_dir}/fontmap2
+:> $RPM_BUILD_ROOT%{_fontsdir}/fontmap2
 
 %find_lang %{name} --with-gnome
 
@@ -178,7 +174,7 @@ rm -rf $RPM_BUILD_ROOT
 /sbin/ldconfig
 echo "Generating %{_datadir}/fonts/fontmap2 file"
 %{_bindir}/gnome-font-install \
-	--aliases=%{_org_datadir}/gnome/fonts/adobe-urw.font \
+	--aliases=%{_datadir}/gnome/fonts/adobe-urw.font \
 	--target=%{_datadir}/fonts/fontmap2 \
 	--recursive \
 	--clean \
@@ -192,9 +188,9 @@ echo "Generating %{_datadir}/fonts/fontmap2 file"
 %doc AUTHORS NEWS README
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
-%ghost %{_fonts_dir}/fontmap2
+%ghost %{_fontsdir}/fontmap2
 %{_datadir}/gnome-print
-%{_org_datadir}/gnome/fonts
+%{_datadir}/gnome/fonts
 
 %files devel
 %defattr(644,root,root,755)
