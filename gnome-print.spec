@@ -71,14 +71,14 @@ Obsoletes:	libgnomeprint15-devel
 %description devel
 Header files for GNOME print.
 
-%description -l es devel
+%description devel -l es
 Este paquete contiene las bibliotecas y los archivos de encabezamiento
 que se necesitan para compilar las aplicaciones que usan GNOME print.
 
-%description -l pl devel
+%description devel -l pl
 Pliki nag³ówkowe itp. do GNOME print.
 
-%description -l pt_BR devel
+%description devel -l pt_BR
 Esse pacote contém as bibliotecas e os arquivos de cabeçalho
 necessários para compilar aplicações que usam o gnome-print.
 
@@ -93,13 +93,13 @@ Requires:	%{name}-devel = %{version}
 %description static
 GNOME print static libraries.
 
-%description -l es static
+%description static -l es
 Static libraries for gnome-print development.
 
-%description -l pl static
+%description static -l pl
 Biblioteki statyczne z funkcjami do drukowania w GNOME.
 
-%description -l pt_BR static
+%description static -l pt_BR
 Bibliotecas estáticas para desenvolvimento com o gnome-print.
 
 %prep
