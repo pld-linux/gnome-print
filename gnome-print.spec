@@ -1,7 +1,7 @@
 Summary:	GNOME print programs
 Summary(pl):	Programy podstawowe GNOME'a 
 Name:		gnome-print
-Version:	0.10
+Version:	0.12
 Release:	1
 License:	LGPL
 Group:		X11/GNOME
