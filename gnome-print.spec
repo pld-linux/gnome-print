@@ -18,6 +18,7 @@ Patch0:		%{name}-gnome-font-install.patch
 Patch1:		%{name}-am15.patch
 Patch2:		%{name}-ac_fixes.patch
 Patch3:		%{name}-am17.patch
+Patch4:		%{name}-ft2build_h.patch
 Icon:		gnome-print.gif
 URL:		http://www.levien.com/gnome/print-arch.html
 BuildRequires:	autoconf
@@ -139,6 +140,7 @@ Bibliotecas estáticas para desenvolvimento com o gnome-print.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
 
 %build
 rm -f missing acinclude.m4
