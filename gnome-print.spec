@@ -79,7 +79,7 @@ Summary(ru):	Хедеры и другие файлы для разработки приложений GNOME
 Summary(uk):	Хедери та ╕нш╕ файли для розробки програм GNOME
 Summary(zh_CN):	Gnome╢Рс║╧╓╬ъ©╙╥╒©Б
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{epoch}:%{version}
 Requires:	freetype-devel
 Requires:	gdk-pixbuf-devel
 Requires:	gnome-libs-devel
@@ -115,7 +115,7 @@ Summary(pt_BR):	Bibliotecas estАticas para desenvolvimento com o gnome-print
 Summary(ru):	Статические библиотеки для разработки приложений под GNOME
 Summary(uk):	Статичн╕ б╕бл╕отеки для розробки програм п╕д GNOME
 Group:		X11/Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{epoch}:%{version}
 
 %description static
 GNOME print static libraries.
