@@ -86,32 +86,33 @@ strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
 /sbin/ldconfig
 
 %{_bindir}/gnome-font-install --system --scan --no-copy \
-      --afm-path=%{_fonts_dir}/type1 \
-      --pfb-path=%{_fonts_dir}/type1 \
-      --fontmap-path=%{_fonts_dir} \
-      --pfb-assignment=ghostscript,%{_fonts_dir}/type1 \
-      --afm-assignment=ghostscript,%{_fonts_dir}/type1 \
-      %{_fonts_dir}
+
+#      --afm-path=%{_fonts_dir}/type1 \
+#      --pfb-path=%{_fonts_dir}/type1 \
+#      --fontmap-path=%{_fonts_dir} \
+#      --pfb-assignment=ghostscript,%{_fonts_dir}/type1 \
+#      --afm-assignment=ghostscript,%{_fonts_dir}/type1 \
+#      %{_fonts_dir}
 
 %postun -p /sbin/ldconfig
 
-%triggerpost -- ghostscript-fonts-std
-%{_bindir}/gnome-font-install --system --scan --no-copy \
-      --afm-path=%{_fonts_dir}/type1 \
-      --pfb-path=%{_fonts_dir}/type1 \
-      --fontmap-path=%{_fonts_dir} \
-      --pfb-assignment=ghostscript,%{_fonts_dir}/type1 \
-      --afm-assignment=ghostscript,%{_fonts_dir}/type1 \
-      %{_fonts_dir}
+#%triggerpost -- ghostscript-fonts-std
+#%{_bindir}/gnome-font-install --system --scan --no-copy \
+#      --afm-path=%{_fonts_dir}/type1 \
+#      --pfb-path=%{_fonts_dir}/type1 \
+#      --fontmap-path=%{_fonts_dir} \
+#      --pfb-assignment=ghostscript,%{_fonts_dir}/type1 \
+#      --afm-assignment=ghostscript,%{_fonts_dir}/type1 \
+#      %{_fonts_dir}
 
-%triggerpostun -- ghostscript-fonts-std
-%{_bindir}/gnome-font-install --system --scan --no-copy \
-      --afm-path=%{_fonts_dir}/type1 \
-      --pfb-path=%{_fonts_dir}/type1 \
-      --fontmap-path=%{_fonts_dir} \
-      --pfb-assignment=ghostscript,%{_fonts_dir}/type1 \
-      --afm-assignment=ghostscript,%{_fonts_dir}/type1 \
-      %{_fonts_dir}
+#%triggerpostun -- ghostscript-fonts-std
+#%{_bindir}/gnome-font-install --system --scan --no-copy \
+#      --afm-path=%{_fonts_dir}/type1 \
+#      --pfb-path=%{_fonts_dir}/type1 \
+#      --fontmap-path=%{_fonts_dir} \
+#      --pfb-assignment=ghostscript,%{_fonts_dir}/type1 \
+#      --afm-assignment=ghostscript,%{_fonts_dir}/type1 \
+#      %{_fonts_dir}
 
 
 %clean
