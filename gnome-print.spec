@@ -146,7 +146,7 @@ sed -e s/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
 mv -f configure.in.tmp configure.in
 %{__libtoolize}
 %{__gettextize}
-aclocal -I %{_aclocaldir}/gnome
+%{__aclocal} -I %{_aclocaldir}/gnome
 %{__autoconf}
 %{__automake}
 %configure  \
