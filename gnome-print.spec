@@ -1,9 +1,9 @@
-Summary:	GNOME core programs
+Summary:	GNOME print programs
 Summary(pl):	Programy podstawowe GNOME'a 
 Name:		gnome-print
-Version:	0.9
+Version:	0.10
 Release:	1
-Copyright:	LGPL
+License:	LGPL
 Group:		X11/GNOME
 Group(pl):	X11/GNOME
 Source:		ftp://ftp.gnome.org/pub/GNOME/stable/sources/%{name}/%{name}-%{version}.tar.gz
@@ -18,22 +18,20 @@ BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
 Basic programs and libraries that are virtually required for any GNOME
-installation.
-
-GNOME is the GNU Network Object Model Environment. That's a fancy name but
-really GNOME is a nice GUI desktop environment. It makes using your
-computer easy, powerful, and easy to configure.
+installation.  GNOME is the GNU Network Object Model Environment. That's a
+fancy name but really GNOME is a nice GUI desktop environment. It makes
+using your computer easy, powerful, and easy to configure.
 
 %description -l pl
 Podstawowe programy i biblioteki, które s± niezbêdne przy ka¿dej instlacji
 GNOME.
 
 %package devel
-Summary:     	GNOME core libraries, includes, etc
-Summary(pl): 	GNOME core - pliki nag³ówkowe, etc
-Group:       	X11/GNOME/Development/Libraries
+Summary:	GNOME print libraries, includes, etc
+Summary(pl):	GNOME print - pliki nag³ówkowe, etc
+Group:		X11/GNOME/Development/Libraries
 Group(pl):	X11/GNOME/Programowanie/Biblioteki
-Requires:    	%{name} = %{version}
+Requires:	%{name} = %{version}
 
 %description devel
 Header files for gnome-libs.
@@ -42,14 +40,14 @@ Header files for gnome-libs.
 Pliki nag³ówkowe etc do GNOME core.
 
 %package static
-Summary:     	GNOME core static libraries
-Summary(pl): 	Biblioteki statyczne GNOME core
-Group:       	X11/GNOME/Development/Libraries
+Summary:	GNOME print static libraries
+Summary(pl):	Biblioteki statyczne GNOME print
+Group:		X11/GNOME/Development/Libraries
 Group(pl):	X11/GNOME/Programowanie/Biblioteki
-Requires:    	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}
 
 %description static
-GNOME core static libraries.
+GNOME print static libraries.
 
 %prep
 %setup -q
@@ -70,7 +68,7 @@ gzip -9nf AUTHORS ChangeLog NEWS README
 rm -rf $RPM_BUILD_ROOT
 make DESTDIR=$RPM_BUILD_ROOT install
 
-strip --strip-unneeded $RPM_BUILD_ROOT/usr/X11R6/lib/lib*.so.*.*
+strip --strip-unneeded $RPM_BUILD_ROOT%{_prefix}/lib/lib*.so.*.*
 
 %find_lang %{name}
 
@@ -82,18 +80,17 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) /usr/X11R6/bin/*
-%attr(755,root,root) /usr/X11R6/lib/lib*.so.*.*
-/usr/X11R6/share/gnome-print
+%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%{_datadir}/gnome-print
 
 %files devel
 %defattr(644,root,root,755)
 %doc *.gz
-%attr(755,root,root) /usr/X11R6/lib/lib*.so
-%attr(755,root,root) /usr/X11R6/lib/lib*.la
-%attr(755,root,root) /usr/X11R6/lib/*.sh
-/usr/X11R6/include/libgnomeprint
+%attr(755,root,root) %{_libdir}/lib*.so
+%attr(755,root,root) %{_libdir}/lib*.la
+%attr(755,root,root) %{_libdir}/*.sh
+%{_includedir}/libgnomeprint
 
 %files static
-%defattr(644,root,root,755)
-/usr/X11R6/lib/lib*.a
+%attr(644,root,root) %{_libdir}/lib*.a
