@@ -4,9 +4,9 @@ Name:		gnome-print
 Version:	0.22
 Release:	3
 License:	LGPL
-Group:		X11/GNOME
-Group(pl):	X11/GNOME
-Group(de):	X11/GNOME
+Group:		X11/Libraries
+Group(de):	X11/Libraries
+Group(pl):	X11/Biblioteki
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/%{name}/%{name}-%{version}.tar.gz
 Patch0:		%{name}-gnome-font-install.patch
 Icon:		gnome-print.gif
@@ -37,9 +37,9 @@ GNOME print - biblioteki infrastruktury drukowania w ¶rodowisku GNOME.
 %package devel
 Summary:	GNOME print libraries, includes, etc
 Summary(pl):	GNOME print - pliki nag³ówkowe, etc
-Group:		X11/GNOME/Development/Libraries
-Group(pl):	X11/GNOME/Programowanie/Biblioteki
-Group(de):	X11/GNOME/Entwicklung/Libraries
+Group:		X11/Development/Libraries
+Group(de):	X11/Entwicklung/Libraries
+Group(pl):	X11/Programowanie/Biblioteki
 Requires:	%{name} = %{version}
 
 %description devel
@@ -51,9 +51,9 @@ Pliki nag³ówkowe etc do GNOME print.
 %package static
 Summary:	GNOME print static libraries
 Summary(pl):	Biblioteki statyczne GNOME print
-Group:		X11/GNOME/Development/Libraries
-Group(pl):	X11/GNOME/Programowanie/Biblioteki
-Group(de):	X11/GNOME/Entwicklung/Libraries
+Group:		X11/Development/Libraries
+Group(de):	X11/Entwicklung/Libraries
+Group(pl):	X11/Programowanie/Biblioteki
 Requires:	%{name}-devel = %{version}
 
 %description static
@@ -70,7 +70,6 @@ Biblioteki statyczne z funkcjami do drukowania w GNOME.
 gettextize --copy --force
 automake
 autoconf
-LDFLAGS="-s"; export LDFLAGS
 %configure  \
 	--without-included-gettext
 %{__make}
@@ -81,8 +80,6 @@ gzip -9nf AUTHORS ChangeLog NEWS README
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} DESTDIR=$RPM_BUILD_ROOT install
-
-strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
 
 :> $RPM_BUILD_ROOT%{_fonts_dir}/fontmap
 
