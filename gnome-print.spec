@@ -2,7 +2,7 @@ Summary:	GNOME print programs
 Summary(pl):	GNOME print - biblioteki infrastruktury drukowania w ¶rodowisku GNOME
 Name:		gnome-print
 Version:	0.31
-Release:	1
+Release:	2
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
@@ -128,7 +128,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 /sbin/ldconfig
-(cd %{_fonts_dir}; %{_bindir}/gnome-font-install --target=%{_fonts_dir}/fontmap)
+echo "Generate /usr/share/fonts/fontmap file"
+%{_bindir}/gnome-font-install -r -c -t /usr/share/fonts/fontmap2 /usr/share/fonts/
 
 %postun -p /sbin/ldconfig
 
