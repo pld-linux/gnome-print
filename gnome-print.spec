@@ -3,8 +3,8 @@ Summary(es):	Sistema de impresión de GNOME
 Summary(pl):	GNOME print - biblioteki infrastruktury drukowania w ¶rodowisku GNOME
 Summary(pt_BR):	O sistema de impressão do GNOME
 Name:		gnome-print
-Version:	0.34
-Release:	4
+Version:	0.35
+Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
