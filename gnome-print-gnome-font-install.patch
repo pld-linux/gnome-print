@@ -1,9 +1,8 @@
-diff -urN gnome-print-0.26.org/installer/Makefile.am gnome-print-0.26/installer/Makefile.am
---- gnome-print-0.26.org/installer/Makefile.am	Wed Mar  7 14:19:56 2001
-+++ gnome-print-0.26/installer/Makefile.am	Wed Mar  7 14:20:18 2001
-@@ -24,5 +24,3 @@
- 	$(LIBGPA_TEST_LIBS) \
- 	$(INTLLIBS)
+--- gnome-print-0.30/installer/Makefile.am.orig	Thu Oct  4 22:04:10 2001
++++ gnome-print-0.30/installer/Makefile.am	Tue Oct  9 02:52:11 2001
+@@ -37,5 +37,3 @@
+ readmedir = $(datadir)/fonts
+ readme_DATA = README.installer README.binaries
  
 -install-data-local: gnome-font-install
--	$(PERL) $(top_srcdir)/run-gnome-font-install ./gnome-font-install $(datadir) $(top_srcdir)
+-	$(PERL) $(top_srcdir)/run-gnome-font-install ./gnome-font-install $(datadir) $(top_srcdir) $(sysconfdir)
