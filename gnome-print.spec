@@ -1,11 +1,11 @@
 Summary:	GNOME core programs
 Summary(pl):	Programy podstawowe GNOME'a 
 Name:		gnome-print
-Version:	0.1.1
+Version:	0.2
 Release:	1
 Copyright:	LGPL
-Group:		X11/Libraries
-Group(pl):	X11/Biblioteki
+Group:		X11/GNOME
+Group(pl):	X11/GNOME
 Source:		ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.gz
 Patch0:		gnome-print-gnome-font-install.patch
 Patch1:		gnome-print-DESTDIR.patch
@@ -28,8 +28,8 @@ GNOME.
 %package devel
 Summary:     	GNOME core libraries, includes, etc
 Summary(pl): 	GNOME core - pliki nag³ówkowe, etc
-Group:       	X11/Development/Libraries
-Group(pl):	X11/Programowanie/Biblioteki
+Group:       	X11/GNOME/Development/Libraries
+Group(pl):	X11/GNOME/Programowanie/Biblioteki
 Requires:    	%{name} = %{version}
 
 %description devel
@@ -41,8 +41,8 @@ Pliki nag³ówkowe etc do GNOME core.
 %package static
 Summary:     	GNOME core static libraries
 Summary(pl): 	Biblioteki statyczne GNOME core
-Group:       	X11/Development/Libraries
-Group(pl):	X11/Programowanie/Biblioteki
+Group:       	X11/GNOME/Development/Libraries
+Group(pl):	X11/GNOME/Programowanie/Biblioteki
 Requires:    	%{name}-devel = %{version}
 
 %description static
