@@ -1,7 +1,7 @@
 Summary:	GNOME core programs
 Summary(pl):	Programy podstawowe GNOME'a 
 Name:		gnome-print
-Version:	0.7
+Version:	0.8
 Release:	1
 Copyright:	LGPL
 Group:		X11/GNOME
