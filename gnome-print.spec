@@ -66,6 +66,7 @@ Group(uk):	X11/Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 Requires:	libunicode-devel
 Requires:	gdk-pixbuf-devel
+Requires:	gnome-libs-devel
 
 %description devel
 Header files for GNOME print.
