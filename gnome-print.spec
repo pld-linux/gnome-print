@@ -124,7 +124,7 @@ rm -rf $RPM_BUILD_ROOT
 	aliasdir=%{_org_datadir}/gnome/fonts \
 	mapdir=%{_org_datadir}/gnome/fonts
 
-install fonts/*.font $RPM_BUILD_ROOT%{_org_datadir}/gnome-print/fonts
+install fonts/*.font $RPM_BUILD_ROOT%{_org_datadir}/gnome/fonts
 
 :> $RPM_BUILD_ROOT%{_fonts_dir}/fontmap2
 
