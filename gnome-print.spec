@@ -7,7 +7,7 @@ License:	LGPL
 Group:		X11/GNOME
 Group(pl):	X11/GNOME
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/%{name}/%{name}-%{version}.tar.gz
-Patch0:		gnome-print-gnome-font-install.patch
+Patch0:		%{name}-gnome-font-install.patch
 Icon:		gnome-print.gif
 URL:		http://www.levien.com/gnome/print-arch.html
 # Package ghostscript-fonts-std contains required Type1 fonts
