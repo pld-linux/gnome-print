@@ -7,7 +7,6 @@ License:	LGPL
 Group:		X11/GNOME
 Group(pl):	X11/GNOME
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/%{name}/%{name}-%{version}.tar.gz
-Source1:	ghostscript-fonts-std.font
 Patch0:		gnome-print-gnome-font-install.patch
 Icon:		gnome-print.gif
 URL:		http://www.levien.com/gnome/print-arch.html
@@ -17,6 +16,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define         _fonts_dir      /usr/share/fonts
+%define		_datadir	/usr/share
 %define		_sysconfdir	/etc/X11/GNOME
 %define		_localstatedir	/var
 
@@ -74,18 +74,13 @@ gzip -9nf AUTHORS ChangeLog NEWS README
 rm -rf $RPM_BUILD_ROOT
 
 make DESTDIR=$RPM_BUILD_ROOT install
-install -d	       $RPM_BUILD_ROOT%{_fonts_dir}
-install fonts/*.font   $RPM_BUILD_ROOT%{_fonts_dir}
-install %{SOURCE1}     $RPM_BUILD_ROOT%{_fonts_dir}
+
 strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
 
 %find_lang %{name} --with-gnome
 
 %post
 /sbin/ldconfig
-if [ -f %{_fonts_dir}/fontmap ]; then
-      cp -p %{_fonts_dir}/fontmap "%{_fonts_dir}/fontmap-`date +"%d-%m-%Y-%T"`"
-fi
 
 %{_bindir}/gnome-font-install --system --scan --no-copy \
       --afm-path=%{_fonts_dir}/type1 \
@@ -97,6 +92,25 @@ fi
 
 %postun -p /sbin/ldconfig
 
+%triggetpost -- ghostscript-fonts-std
+%{_bindir}/gnome-font-install --system --scan --no-copy \
+      --afm-path=%{_fonts_dir}/type1 \
+      --pfb-path=%{_fonts_dir}/type1 \
+      --fontmap-path=%{_fonts_dir} \
+      --pfb-assignment=ghostscript,%{_fonts_dir}/type1 \
+      --afm-assignment=ghostscript,%{_fonts_dir}/type1 \
+      %{_fonts_dir}
+
+%triggetpostun -- ghostscript-fonts-std
+%{_bindir}/gnome-font-install --system --scan --no-copy \
+      --afm-path=%{_fonts_dir}/type1 \
+      --pfb-path=%{_fonts_dir}/type1 \
+      --fontmap-path=%{_fonts_dir} \
+      --pfb-assignment=ghostscript,%{_fonts_dir}/type1 \
+      --afm-assignment=ghostscript,%{_fonts_dir}/type1 \
+      %{_fonts_dir}
+
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -104,7 +118,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
-%{_fonts_dir}/*.font
+%ghost %{_fonts_dir}/fontmap
 %{_datadir}/gnome-print
 
 %files devel
