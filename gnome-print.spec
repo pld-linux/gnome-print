@@ -1,8 +1,8 @@
 Summary:	GNOME print programs
 Summary(pl):	GNOME print - biblioteki infrastruktury drukowania w ¶rodowisku GNOME
 Name:		gnome-print
-Version:	0.29
-Release:	7
+Version:	0.30
+Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
@@ -15,11 +15,8 @@ Group(ru):	X11/âÉÂÌÉÏÔÅËÉ
 Group(uk):	X11/â¦ÂÌ¦ÏÔÅËÉ
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/%{name}/%{name}-%{version}.tar.gz
 Patch0:		%{name}-localeh.patch
-Patch1:		%{name}-fontset.patch
-Patch2:		%{name}-gnome-font-install.patch
-Patch3:		%{name}-gettext.patch
-Patch4:		%{name}-am15.patch
-Patch5:		%{name}-options.patch
+Patch1:		%{name}-gnome-font-install.patch
+Patch2:		%{name}-am15.patch
 Icon:		gnome-print.gif
 URL:		http://www.levien.com/gnome/print-arch.html
 BuildRequires:	libtool
@@ -100,12 +97,11 @@ Biblioteki statyczne z funkcjami do drukowania w GNOME.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
-%patch4 -p1
-%patch5 -p1
 
 %build
 rm -f missing acinclude.m4
+sed -e s/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
+mv -f configure.in.tmp configure.in
 libtoolize --copy --force
 gettextize --copy --force
 aclocal -I %{_aclocaldir}/gnome
@@ -149,7 +145,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
 %attr(755,root,root) %{_libdir}/*.sh
-%{_includedir}/libgnomeprint
+%{_includedir}/gnome-1.0/libgnomeprint
 
 %files static
 %defattr(644,root,root,755)
