@@ -114,13 +114,13 @@ Requires:	%{name}-devel = %{version}
 %description static
 GNOME print static libraries.
 
-%description -l es devel-static
+%description -l es static
 Static libraries for gnome-print development.
 
 %description -l pl static
 Biblioteki statyczne z funkcjami do drukowania w GNOME.
 
-%description -l pt_BR devel-static
+%description -l pt_BR static
 Bibliotecas estáticas para desenvolvimento com o gnome-print.
 
 %prep
