@@ -1,10 +1,9 @@
-diff -Nru gnome-print-0.22/Makefile.am gnome-print-0.22.new/Makefile.am
---- gnome-print-0.22/Makefile.am	Sun Aug 20 16:37:23 2000
-+++ gnome-print-0.22.new/Makefile.am	Thu Aug 31 00:33:08 2000
-@@ -58,6 +58,3 @@
- 	$(GNOME_LIBS)		\
- 	$(GNOME_XML_LIB)	\
+diff -urN gnome-print-0.26.org/installer/Makefile.am gnome-print-0.26/installer/Makefile.am
+--- gnome-print-0.26.org/installer/Makefile.am	Wed Mar  7 14:19:56 2001
++++ gnome-print-0.26/installer/Makefile.am	Wed Mar  7 14:20:18 2001
+@@ -24,5 +24,3 @@
+ 	$(LIBGPA_TEST_LIBS) \
  	$(INTLLIBS)
--
+ 
 -install-data-local: gnome-font-install
--	$(PERL) $(srcdir)/run-gnome-font-install ./gnome-font-install $(datadir) $(srcdir)
+-	$(PERL) $(top_srcdir)/run-gnome-font-install ./gnome-font-install $(datadir) $(top_srcdir)
