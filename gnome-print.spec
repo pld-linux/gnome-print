@@ -35,7 +35,6 @@ Prereq:		audiofile
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libgnomeprint15
 
-%define		_prefix		/usr/X11R6
 %define         _fonts_dir      /usr/share/fonts
 %define		_org_datadir	%{_prefix}/share
 %define		_datadir	/usr/share
