@@ -1,25 +1,24 @@
 Summary:	GNOME print programs
 Summary(pl):	GNOME print - biblioteki infrastruktury drukowania w ¶rodowisku GNOME
 Name:		gnome-print
-Version:	0.25
-Release:	9
+Version:	0.26
+Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
 Group(pl):	X11/Biblioteki
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/%{name}/%{name}-%{version}.tar.gz
-Patch0:		%{name}-gnome-font-install.patch
-Patch1:		%{name}-hardcode_fontmap_path.patch
-Patch2:		%{name}-localeh.patch
-Patch3:		%{name}-fontset.patch
-Patch4:		%{name}-macros.patch
+Patch0:		%{name}-localeh.patch
+Patch1:		%{name}-fontset.patch
+Patch2:		%{name}-gnome-font-install.patch
 Icon:		gnome-print.gif
 URL:		http://www.levien.com/gnome/print-arch.html
 BuildRequires:	automake
 BuildRequires:	automake
 BuildRequires:	libxml-devel
 BuildRequires:	libunicode-devel
+BuildRequires:	gnome-libs-devel >= 1.2.12-3
 # Package ghostscript-fonts-std contains required Type1 fonts
 Requires:	ghostscript-fonts-std
 Prereq:		/sbin/ldconfig
@@ -81,12 +80,10 @@ Biblioteki statyczne z funkcjami do drukowania w GNOME.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
-%patch4 -p1
 
 %build
 gettextize --copy --force
-aclocal -I macros
+aclocal -I %{_aclocaldir}/gnome
 autoconf
 automake -a -c
 %configure  \
@@ -101,13 +98,13 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} DESTDIR=$RPM_BUILD_ROOT install
 
 :> $RPM_BUILD_ROOT%{_fonts_dir}/fontmap
+:> $RPM_BUILD_ROOT%{_fonts_dir}/fontmap2
 
 %find_lang %{name} --with-gnome
 
 %post
 /sbin/ldconfig
-cd /usr/share/fonts
-%{_bindir}/gnome-font-install --system --scan --no-copy --disable-sound
+(cd /usr/share/fonts; %{_bindir}/gnome-font-install --system --scan --no-copy --disable-sound)
 
 %postun -p /sbin/ldconfig
 
@@ -119,6 +116,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %ghost %{_fonts_dir}/fontmap
+%ghost %{_fonts_dir}/fontmap2
 %{_datadir}/gnome-print
 
 %files devel
