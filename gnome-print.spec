@@ -93,10 +93,3 @@ rm -rf $RPM_BUILD_ROOT
 %files static
 %defattr(644,root,root,755)
 /usr/X11R6/lib/lib*.a
-
-%changelog
-Revision 1.8  1999/07/12 23:05:57  kloczek
-- added using CVS keywords in %changelog (for automating them).
-- first release in rpm package.* Mon Mar 29 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [0.1.1-1]
-- first release in rpm package.
