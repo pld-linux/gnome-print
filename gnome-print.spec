@@ -10,6 +10,9 @@ Patch0:		gnome-print-gnome-font-install.patch
 Patch1:		gnome-print-DESTDIR.patch
 Icon:		gnome-print.gif
 URL:		http://www.levien.com/gnome/print-arch.html
+BuildPrereq:	gtk+-devel >= 1.1.15
+BuildPrereq:	ORBit-devel
+%requires_pkg	gtk+
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
@@ -93,11 +96,13 @@ rm -rf $RPM_BUILD_ROOT
 /usr/X11R6/include/libgnomeprint
 
 %files static
-%attr(644,root,root) /usr/X11R6/lib/lib*.a
+%defattr(644,root,root,755)
+/usr/X11R6/lib/lib*.a
 
 %changelog
 Revision 1.8  1999/07/12 23:05:57  kloczek
 - added using CVS keywords in %changelog (for automating them).
-- first release in rpm package.* Mon Mar 29 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+- first release in rpm package.
+* Mon Mar 29 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.1.1-1]
 - first release in rpm package.
