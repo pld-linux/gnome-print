@@ -2,7 +2,7 @@ Summary:	GNOME print programs
 Summary(pl):	GNOME print - biblioteki infrastruktury drukowania w ¶rodowisku GNOME
 Name:		gnome-print
 Version:	0.34
-Release:	1
+Release:	2
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
@@ -34,7 +34,7 @@ Prereq:		libxml
 Prereq:		esound
 Prereq:		audiofile
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Obsoletes:	libgnomeprint11
+Obsoletes:	libgnomeprint15
 
 %define		_prefix		/usr/X11R6
 %define         _fonts_dir      /usr/share/fonts
@@ -67,6 +67,7 @@ Requires:	%{name} = %{version}
 Requires:	libunicode-devel
 Requires:	gdk-pixbuf-devel
 Requires:	gnome-libs-devel
+Obsoletes:	libgnomeprint15-devel
 
 %description devel
 Header files for GNOME print.
