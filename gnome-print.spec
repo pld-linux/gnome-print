@@ -121,8 +121,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	aliasdir=$RPM_BUILD_ROOT%{_org_datadir}/gnome/fonts \
-	mapdir=$RPM_BUILD_ROOT%{_org_datadir}/gnome/fonts
+	aliasdir=%{_org_datadir}/gnome/fonts \
+	mapdir=%{_org_datadir}/gnome/fonts
+
+install fonts/*.font $RPM_BUILD_ROOT%{_org_datadir}/gnome-print/fonts
 
 :> $RPM_BUILD_ROOT%{_fonts_dir}/fontmap2
 
@@ -133,14 +135,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 /sbin/ldconfig
-echo "Generating /usr/share/fonts/fontmap2 file"
+echo "Generating %{_datadir}/fonts/fontmap2 file"
 %{_bindir}/gnome-font-install \
-	--aliases=%{_datadir}/gnome-print/fonts/adobe-urw.font \
-	--target=/usr/share/fonts/fontmap2 \
+	--aliases=%{_org_datadir}/gnome-print/fonts/adobe-urw.font \
+	--target=%{_datadir}/fonts/fontmap2 \
 	--recursive \
 	--clean \
-	/usr/share/fonts/Type1 \
-	/usr/share/fonts/TTF
+	%{_datadir}/fonts/Type1 \
+	%{_datadir}/fonts/TTF
 
 %postun -p /sbin/ldconfig
 
@@ -150,7 +152,7 @@ echo "Generating /usr/share/fonts/fontmap2 file"
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %ghost %{_fonts_dir}/fontmap2
 %{_datadir}/gnome-print
-%{_datadir}/gnome/fonts
+%{_org_datadir}/gnome/fonts
 
 %files devel
 %defattr(644,root,root,755)
