@@ -14,6 +14,9 @@ Patch1:		%{name}-hardcode_fontmap_path.patch
 Icon:		gnome-print.gif
 URL:		http://www.levien.com/gnome/print-arch.html
 BuildRequires:	automake
+BuildRequires:	automake
+BuildRequires:	libxml-devel
+BuildRequires:	libunicode-devel
 # Package ghostscript-fonts-std contains required Type1 fonts
 Requires:	ghostscript-fonts-std
 Prereq:		/sbin/ldconfig
@@ -21,8 +24,6 @@ Prereq:		libxml
 # that's sick - gnome-font-install requires packages below...
 Prereq:		esound
 Prereq:		audiofile
-BuildRequires:	libxml-devel
-BuildRequires:	libunicode-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libgnomeprint11
 
@@ -79,8 +80,9 @@ Biblioteki statyczne z funkcjami do drukowania w GNOME.
 
 %build
 gettextize --copy --force
-automake
+aclocal
 autoconf
+automake -a -c
 %configure  \
 	--without-included-gettext
 %{__make}
