@@ -1,8 +1,8 @@
 Summary:	GNOME print programs
 Summary(pl):	GNOME print - biblioteki infrastruktury drukowania w ¶rodowisku GNOME
 Name:		gnome-print
-Version:	0.31
-Release:	3
+Version:	0.32
+Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
@@ -13,7 +13,7 @@ Group(pl):	X11/Biblioteki
 Group(pt_BR):	X11/Bibliotecas
 Group(ru):	X11/âÉÂÌÉÏÔÅËÉ
 Group(uk):	X11/â¦ÂÌ¦ÏÔÅËÉ
-Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/%{name}/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/%{name}/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-localeh.patch
 Patch1:		%{name}-gnome-font-install.patch
 Patch2:		%{name}-am15.patch
@@ -95,7 +95,7 @@ Biblioteki statyczne z funkcjami do drukowania w GNOME.
 
 %prep
 %setup -q
-%patch0 -p1
+#%patch0 -p1
 %patch1 -p1
 %patch2 -p1
 
@@ -119,17 +119,16 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} DESTDIR=$RPM_BUILD_ROOT install
 
-:> $RPM_BUILD_ROOT%{_fonts_dir}/fontmap
 :> $RPM_BUILD_ROOT%{_fonts_dir}/fontmap2
 
 %find_lang %{name} --with-gnome
 
-#%clean
-#rm -rf $RPM_BUILD_ROOT
+%clean
+rm -rf $RPM_BUILD_ROOT
 
 %post
 /sbin/ldconfig
-echo "Generate /usr/share/fonts/fontmap file"
+echo "Generate /usr/share/fonts/fontmap2 file"
 %{_bindir}/gnome-font-install -r -c -t /usr/share/fonts/fontmap2 /usr/share/fonts/
 
 %postun -p /sbin/ldconfig
@@ -138,7 +137,7 @@ echo "Generate /usr/share/fonts/fontmap file"
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
-%ghost %{_fonts_dir}/fontmap
+%ghost %{_fonts_dir}/fontmap2
 %{_datadir}/gnome-print
 
 %files devel
