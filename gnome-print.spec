@@ -12,7 +12,7 @@ Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
-Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/%{name}/%{name}-%{version}.tar.bz2
+Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{version}/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-gnome-font-install.patch
 Patch1:		%{name}-am15.patch
 Patch2:		%{name}-ac_fixes.patch
