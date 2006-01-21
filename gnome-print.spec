@@ -20,7 +20,6 @@ Patch2:		%{name}-ac_fixes.patch
 Patch3:		%{name}-am17.patch
 Patch4:		%{name}-ft2build_h.patch
 Patch5:		%{name}-locale_names.patch
-Icon:		gnome-print.gif
 URL:		http://www.levien.com/gnome/print-arch.html
 BuildRequires:	autoconf
 BuildRequires:	automake
