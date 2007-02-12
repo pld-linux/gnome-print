@@ -1,11 +1,11 @@
 Summary:	GNOME print programs
-Summary(es):	Sistema de impresiСn de GNOME
-Summary(ko):	GNOME Print - ╠вЁПю╩ ю╖гя юн╪Б ╤Сюл╨Й╥╞╦╝
-Summary(pl):	GNOME print - biblioteki infrastruktury drukowania w ╤rodowisku GNOME
-Summary(pt_BR):	O sistema de impressЦo do GNOME
-Summary(ru):	Библиотеки печати для GNOME
-Summary(uk):	Б╕бл╕отеки друку для GNOME
-Summary(zh_CN):	GNOME╢Рс║╧╓╬ъ
+Summary(es.UTF-8):   Sistema de impresiцЁn de GNOME
+Summary(ko.UTF-8):   GNOME Print - Й╥╦К├┬Л²└ Л°└М∙° Л²╦Л┤└ К²╪Л²╢К╦▄К÷╛К╕╛
+Summary(pl.UTF-8):   GNOME print - biblioteki infrastruktury drukowania w е⌡rodowisku GNOME
+Summary(pt_BR.UTF-8):   O sistema de impressцёo do GNOME
+Summary(ru.UTF-8):   п▒п╦п╠п╩п╦п╬я┌п╣п╨п╦ п©п╣я┤п╟я┌п╦ п╢п╩я▐ GNOME
+Summary(uk.UTF-8):   п▒я√п╠п╩я√п╬я┌п╣п╨п╦ п╢я─я┐п╨я┐ п╢п╩я▐ GNOME
+Summary(zh_CN.UTF-8):   GNOMEФ┴⌠Е█╟Е╥╔Е┘╥
 Name:		gnome-print
 Version:	0.37
 Release:	6
@@ -47,34 +47,34 @@ That's a fancy name but really GNOME is a nice GUI desktop
 environment. It makes using your computer easy, powerful, and easy to
 configure.
 
-%description -l es
+%description -l es.UTF-8
 gnome-print incluye las bibliotecas que se necesitan para que los
 programas GNOME puedan imprimir.
 
-%description -l pl
-GNOME print - biblioteki infrastruktury drukowania w ╤rodowisku GNOME.
+%description -l pl.UTF-8
+GNOME print - biblioteki infrastruktury drukowania w е⌡rodowisku GNOME.
 
-%description -l pt_BR
-O gnome-print inclui as bibliotecas necessАrias para que programas
+%description -l pt_BR.UTF-8
+O gnome-print inclui as bibliotecas necessц║rias para que programas
 GNOME possam imprimir.
 
-%description -l ru
-Пакет gnome-print содержит библиотеки и шрифты, необходимые для
-программ, которые поддерживают печать средствами GNOME.
+%description -l ru.UTF-8
+п÷п╟п╨п╣я┌ gnome-print я│п╬п╢п╣я─п╤п╦я┌ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╦ п╦ я┬я─п╦я└я┌я▀, п╫п╣п╬п╠я┘п╬п╢п╦п╪я▀п╣ п╢п╩я▐
+п©я─п╬пЁя─п╟п╪п╪, п╨п╬я┌п╬я─я▀п╣ п©п╬п╢п╢п╣я─п╤п╦п╡п╟я▌я┌ п©п╣я┤п╟я┌я▄ я│я─п╣п╢я│я┌п╡п╟п╪п╦ GNOME.
 
-%description -l uk
-Пакет gnome-print м╕стить б╕бл╕отеки та шрифти, необх╕дн╕ для програм,
-як╕ п╕дтримують друк засобами GNOME.
+%description -l uk.UTF-8
+п÷п╟п╨п╣я┌ gnome-print п╪я√я│я┌п╦я┌я▄ п╠я√п╠п╩я√п╬я┌п╣п╨п╦ я┌п╟ я┬я─п╦я└я┌п╦, п╫п╣п╬п╠я┘я√п╢п╫я√ п╢п╩я▐ п©я─п╬пЁя─п╟п╪,
+я▐п╨я√ п©я√п╢я┌я─п╦п╪я┐я▌я┌я▄ п╢я─я┐п╨ п╥п╟я│п╬п╠п╟п╪п╦ GNOME.
 
 %package devel
 Summary:	GNOME print libraries, includes, etc
-Summary(es):	Bibliotecas y archivos de inclusiСn de GNOME print
-Summary(ko):	GNOME print╦╕ ╩Г©Кго╢б юю©Кга╥н╠в╥╔ю╩ ╟Ё╧ъго╠Б ю╖гя ╤Сюл╨Й╥╞╦╝©м гЛ╢Уфдюо
-Summary(pl):	GNOME print - pliki nagЁСwkowe itp
-Summary(pt_BR):	Bibliotecas e arquivos de inclusЦo do GNOME print
-Summary(ru):	Хедеры и другие файлы для разработки приложений GNOME
-Summary(uk):	Хедери та ╕нш╕ файли для розробки програм GNOME
-Summary(zh_CN):	GNOME╢Рс║╧╓╬ъ©╙╥╒©Б
+Summary(es.UTF-8):   Bibliotecas y archivos de inclusiцЁn de GNOME print
+Summary(ko.UTF-8):   GNOME printК╔╪ Л┌╛Л ╘М∙≤К┼■ Л²▒Л ╘М■└К║°Й╥╦К·╗Л²└ Й╟°К╟°М∙≤Й╦╟ Л°└М∙° К²╪Л²╢К╦▄К÷╛К╕╛Л≥─ М≈╓К█■М▄▄Л²╪
+Summary(pl.UTF-8):   GNOME print - pliki nagе┌цЁwkowe itp
+Summary(pt_BR.UTF-8):   Bibliotecas e arquivos de inclusцёo do GNOME print
+Summary(ru.UTF-8):   п╔п╣п╢п╣я─я▀ п╦ п╢я─я┐пЁп╦п╣ я└п╟п╧п╩я▀ п╢п╩я▐ я─п╟п╥я─п╟п╠п╬я┌п╨п╦ п©я─п╦п╩п╬п╤п╣п╫п╦п╧ GNOME
+Summary(uk.UTF-8):   п╔п╣п╢п╣я─п╦ я┌п╟ я√п╫я┬я√ я└п╟п╧п╩п╦ п╢п╩я▐ я─п╬п╥я─п╬п╠п╨п╦ п©я─п╬пЁя─п╟п╪ GNOME
+Summary(zh_CN.UTF-8):   GNOMEФ┴⌠Е█╟Е╥╔Е┘╥Е╪─Е▐▒Е╨⌠
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}
 Requires:	freetype-devel
@@ -86,54 +86,54 @@ Obsoletes:	libgnomeprint15-devel
 %description devel
 Header files for GNOME print.
 
-%description devel -l es
+%description devel -l es.UTF-8
 Este paquete contiene las bibliotecas y los archivos de encabezamiento
 que se necesitan para compilar las aplicaciones que usan GNOME print.
 
-%description devel -l pl
-Pliki nagЁСwkowe itp. do GNOME print.
+%description devel -l pl.UTF-8
+Pliki nagе┌цЁwkowe itp. do GNOME print.
 
-%description devel -l pt_BR
-Esse pacote contИm as bibliotecas e os arquivos de cabeГalho
-necessАrios para compilar aplicaГУes que usam o gnome-print.
+%description devel -l pt_BR.UTF-8
+Esse pacote contц╘m as bibliotecas e os arquivos de cabeц╖alho
+necessц║rios para compilar aplicaц╖ц╣es que usam o gnome-print.
 
-%description devel -l ru
-Пакет gnome-print-devel включает хедеры, необходимые для разработки
-приложений под GNOME, использующих средства печати GNOME.
+%description devel -l ru.UTF-8
+п÷п╟п╨п╣я┌ gnome-print-devel п╡п╨п╩я▌я┤п╟п╣я┌ я┘п╣п╢п╣я─я▀, п╫п╣п╬п╠я┘п╬п╢п╦п╪я▀п╣ п╢п╩я▐ я─п╟п╥я─п╟п╠п╬я┌п╨п╦
+п©я─п╦п╩п╬п╤п╣п╫п╦п╧ п©п╬п╢ GNOME, п╦я│п©п╬п╩я▄п╥я┐я▌я┴п╦я┘ я│я─п╣п╢я│я┌п╡п╟ п©п╣я┤п╟я┌п╦ GNOME.
 
-%description devel -l uk
-Пакет gnome-print-devel включа╓ хедери, потр╕бн╕ для розробки програм,
-що використовують можливост╕ друку GNOME.
+%description devel -l uk.UTF-8
+п÷п╟п╨п╣я┌ gnome-print-devel п╡п╨п╩я▌я┤п╟я■ я┘п╣п╢п╣я─п╦, п©п╬я┌я─я√п╠п╫я√ п╢п╩я▐ я─п╬п╥я─п╬п╠п╨п╦ п©я─п╬пЁя─п╟п╪,
+я┴п╬ п╡п╦п╨п╬я─п╦я│я┌п╬п╡я┐я▌я┌я▄ п╪п╬п╤п╩п╦п╡п╬я│я┌я√ п╢я─я┐п╨я┐ GNOME.
 
 %package static
 Summary:	GNOME print static libraries
-Summary(es):	Static libraries for gnome-print development
-Summary(pl):	Biblioteki statyczne GNOME print
-Summary(pt_BR):	Bibliotecas estАticas para desenvolvimento com o gnome-print
-Summary(ru):	Статические библиотеки для разработки приложений под GNOME
-Summary(uk):	Статичн╕ б╕бл╕отеки для розробки програм п╕д GNOME
+Summary(es.UTF-8):   Static libraries for gnome-print development
+Summary(pl.UTF-8):   Biblioteki statyczne GNOME print
+Summary(pt_BR.UTF-8):   Bibliotecas estц║ticas para desenvolvimento com o gnome-print
+Summary(ru.UTF-8):   п║я┌п╟я┌п╦я┤п╣я│п╨п╦п╣ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╦ п╢п╩я▐ я─п╟п╥я─п╟п╠п╬я┌п╨п╦ п©я─п╦п╩п╬п╤п╣п╫п╦п╧ п©п╬п╢ GNOME
+Summary(uk.UTF-8):   п║я┌п╟я┌п╦я┤п╫я√ п╠я√п╠п╩я√п╬я┌п╣п╨п╦ п╢п╩я▐ я─п╬п╥я─п╬п╠п╨п╦ п©я─п╬пЁя─п╟п╪ п©я√п╢ GNOME
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}
 
 %description static
 GNOME print static libraries.
 
-%description static -l es
+%description static -l es.UTF-8
 Static libraries for gnome-print development.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteki statyczne z funkcjami do drukowania w GNOME.
 
-%description static -l pt_BR
-Bibliotecas estАticas para desenvolvimento com o gnome-print.
+%description static -l pt_BR.UTF-8
+Bibliotecas estц║ticas para desenvolvimento com o gnome-print.
 
-%description static -l ru
-Статические библиотеки для разработки приложений, использующих
-средства печати GNOME.
+%description static -l ru.UTF-8
+п║я┌п╟я┌п╦я┤п╣я│п╨п╦п╣ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╦ п╢п╩я▐ я─п╟п╥я─п╟п╠п╬я┌п╨п╦ п©я─п╦п╩п╬п╤п╣п╫п╦п╧, п╦я│п©п╬п╩я▄п╥я┐я▌я┴п╦я┘
+я│я─п╣п╢я│я┌п╡п╟ п©п╣я┤п╟я┌п╦ GNOME.
 
-%description static -l uk
-Статичн╕ б╕бл╕отеки для розробки програм, що використовують можливост╕
-друку GNOME.
+%description static -l uk.UTF-8
+п║я┌п╟я┌п╦я┤п╫я√ п╠я√п╠п╩я√п╬я┌п╣п╨п╦ п╢п╩я▐ я─п╬п╥я─п╬п╠п╨п╦ п©я─п╬пЁя─п╟п╪, я┴п╬ п╡п╦п╨п╬я─п╦я│я┌п╬п╡я┐я▌я┌я▄ п╪п╬п╤п╩п╦п╡п╬я│я┌я√
+п╢я─я┐п╨я┐ GNOME.
 
 %prep
 %setup -q
