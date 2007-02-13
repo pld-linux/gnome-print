@@ -1,11 +1,11 @@
 Summary:	GNOME print programs
-Summary(es.UTF-8):   Sistema de impresión de GNOME
-Summary(ko.UTF-8):   GNOME Print - 그놈을 위한 인쇄 라이브러리
-Summary(pl.UTF-8):   GNOME print - biblioteki infrastruktury drukowania w środowisku GNOME
-Summary(pt_BR.UTF-8):   O sistema de impressão do GNOME
-Summary(ru.UTF-8):   Библиотеки печати для GNOME
-Summary(uk.UTF-8):   Бібліотеки друку для GNOME
-Summary(zh_CN.UTF-8):   GNOME打印工具
+Summary(es.UTF-8):	Sistema de impresión de GNOME
+Summary(ko.UTF-8):	GNOME Print - 그놈을 위한 인쇄 라이브러리
+Summary(pl.UTF-8):	GNOME print - biblioteki infrastruktury drukowania w środowisku GNOME
+Summary(pt_BR.UTF-8):	O sistema de impressão do GNOME
+Summary(ru.UTF-8):	Библиотеки печати для GNOME
+Summary(uk.UTF-8):	Бібліотеки друку для GNOME
+Summary(zh_CN.UTF-8):	GNOME打印工具
 Name:		gnome-print
 Version:	0.37
 Release:	6
@@ -68,13 +68,13 @@ GNOME possam imprimir.
 
 %package devel
 Summary:	GNOME print libraries, includes, etc
-Summary(es.UTF-8):   Bibliotecas y archivos de inclusión de GNOME print
-Summary(ko.UTF-8):   GNOME print를 사용하는 응용프로그램을 개발하기 위한 라이브러리와 헤더파일
-Summary(pl.UTF-8):   GNOME print - pliki nagłówkowe itp
-Summary(pt_BR.UTF-8):   Bibliotecas e arquivos de inclusão do GNOME print
-Summary(ru.UTF-8):   Хедеры и другие файлы для разработки приложений GNOME
-Summary(uk.UTF-8):   Хедери та інші файли для розробки програм GNOME
-Summary(zh_CN.UTF-8):   GNOME打印工具开发库
+Summary(es.UTF-8):	Bibliotecas y archivos de inclusión de GNOME print
+Summary(ko.UTF-8):	GNOME print를 사용하는 응용프로그램을 개발하기 위한 라이브러리와 헤더파일
+Summary(pl.UTF-8):	GNOME print - pliki nagłówkowe itp
+Summary(pt_BR.UTF-8):	Bibliotecas e arquivos de inclusão do GNOME print
+Summary(ru.UTF-8):	Хедеры и другие файлы для разработки приложений GNOME
+Summary(uk.UTF-8):	Хедери та інші файли для розробки програм GNOME
+Summary(zh_CN.UTF-8):	GNOME打印工具开发库
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}
 Requires:	freetype-devel
@@ -107,11 +107,11 @@ necessários para compilar aplicações que usam o gnome-print.
 
 %package static
 Summary:	GNOME print static libraries
-Summary(es.UTF-8):   Static libraries for gnome-print development
-Summary(pl.UTF-8):   Biblioteki statyczne GNOME print
-Summary(pt_BR.UTF-8):   Bibliotecas estáticas para desenvolvimento com o gnome-print
-Summary(ru.UTF-8):   Статические библиотеки для разработки приложений под GNOME
-Summary(uk.UTF-8):   Статичні бібліотеки для розробки програм під GNOME
+Summary(es.UTF-8):	Static libraries for gnome-print development
+Summary(pl.UTF-8):	Biblioteki statyczne GNOME print
+Summary(pt_BR.UTF-8):	Bibliotecas estáticas para desenvolvimento com o gnome-print
+Summary(ru.UTF-8):	Статические библиотеки для разработки приложений под GNOME
+Summary(uk.UTF-8):	Статичні бібліотеки для розробки програм під GNOME
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}
 
