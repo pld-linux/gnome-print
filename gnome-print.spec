@@ -10,9 +10,9 @@ Name:		gnome-print
 Version:	0.37
 Release:	6
 Epoch:		1
-License:	LGPL
+License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{version}/%{name}-%{version}.tar.bz2
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-print/0.37/%{name}-%{version}.tar.bz2
 # Source0-md5:	f9e13f4f17b04baceec1cdeed0f88eae
 Patch0:		%{name}-gnome-font-install.patch
 Patch1:		%{name}-am15.patch
@@ -35,8 +35,8 @@ Requires(post):	gnome-libs
 Requires(post):	libxml
 # Package ghostscript-fonts-std contains required Type1 fonts
 Requires:	ghostscript-fonts-std
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libgnomeprint15
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc/X11/GNOME
 
@@ -76,7 +76,7 @@ Summary(ru.UTF-8):	Хедеры и другие файлы для разрабо
 Summary(uk.UTF-8):	Хедери та інші файли для розробки програм GNOME
 Summary(zh_CN.UTF-8):	GNOME打印工具开发库
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{epoch}:%{version}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	freetype-devel
 Requires:	gdk-pixbuf-devel
 Requires:	gnome-libs-devel
@@ -113,7 +113,7 @@ Summary(pt_BR.UTF-8):	Bibliotecas estáticas para desenvolvimento com o gnome-pr
 Summary(ru.UTF-8):	Статические библиотеки для разработки приложений под GNOME
 Summary(uk.UTF-8):	Статичні бібліотеки для розробки програм під GNOME
 Group:		X11/Development/Libraries
-Requires:	%{name}-devel = %{epoch}:%{version}
+Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
 %description static
 GNOME print static libraries.
@@ -147,7 +147,7 @@ Bibliotecas estáticas para desenvolvimento com o gnome-print.
 mv -f po/{no,nb}.po
 
 %build
-rm -f missing acinclude.m4
+rm -f acinclude.m4
 sed -e s/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
 mv -f configure.in.tmp configure.in
 %{__libtoolize}
