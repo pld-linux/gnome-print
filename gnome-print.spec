@@ -34,7 +34,7 @@ Requires(post):	/sbin/ldconfig
 Requires(post):	gnome-libs
 Requires(post):	libxml
 # Package ghostscript-fonts-std contains required Type1 fonts
-Requires:	ghostscript-fonts-std
+Requires:	fonts-Type1-urw
 Obsoletes:	libgnomeprint15
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
