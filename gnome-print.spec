@@ -1,3 +1,4 @@
+#TODO - unpackaged files
 Summary:	GNOME print programs
 Summary(es.UTF-8):	Sistema de impresión de GNOME
 Summary(ko.UTF-8):	GNOME Print - 그놈을 위한 인쇄 라이브러리
@@ -8,7 +9,7 @@ Summary(uk.UTF-8):	Бібліотеки друку для GNOME
 Summary(zh_CN.UTF-8):	GNOME打印工具
 Name:		gnome-print
 Version:	0.37
-Release:	6
+Release:	7
 Epoch:		1
 License:	LGPL v2+
 Group:		X11/Libraries
